@@ -5,9 +5,15 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textUser: UITextField!
     @IBOutlet weak var textPassword: UITextField!
+    @IBOutlet weak var loginView: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginView.layer.cornerRadius = 10
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = ""
     }
     
     @IBAction func creatAccount(_ sender: Any) {
@@ -20,14 +26,8 @@ class ViewController: UIViewController {
     }
     @IBAction func login(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let screen = storyboard.instantiateViewController(withIdentifier: "LoginSuccseVC") as! LoginSuccseVC
-        if textUser.text!.isEmpty {
-            screen.textTitle = "Fail"
+        let screen = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
             navigationController?.pushViewController(screen, animated: true)
-        } else {
-            screen.textTitle = "Succsefully"
-            navigationController?.pushViewController(screen, animated: true)
-        }
     }
 }
 
@@ -37,3 +37,4 @@ extension ViewController: Delegate {
         textPassword.text = dataPassword
     }
 }
+

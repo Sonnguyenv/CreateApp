@@ -12,19 +12,23 @@ class CreateVC: UIViewController {
     @IBOutlet weak var textPassword: UITextField!
     @IBOutlet weak var textRepassword: UITextField!
     
+    @IBOutlet weak var registerView: UIButton!
+    
     var userEmtry = false
     var emailEmtry = false
     var passwordEmtry = false
     var repasswordEmtry = false
     
-    var usertext:String = ""
-    var passwordtext:String = ""
+    var usertext = String()
+    var passwordtext = String()
     
     weak var delegate: Delegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerView.layer.cornerRadius = 10
         textUser.text = usertext
+        
     }
 
     @IBAction func register(_ sender: Any) {
@@ -62,12 +66,12 @@ extension CreateVC: UITextFieldDelegate {
                 lableUser.text = "incorrect"
                 userEmtry = false
             } else {
-                lableUser.text = ""
+                lableUser.text = String()
                 userEmtry = true
             }
         case textEmail:
             if textEmail.text!.contains("@") {
-                lableEmail.text = ""
+                lableEmail.text = String()
                 emailEmtry = true
             } else {
                 lableEmail.text = "incorrect"
@@ -78,7 +82,7 @@ extension CreateVC: UITextFieldDelegate {
                 lablePass.text = "incorrect"
                 passwordEmtry = false
             } else {
-                lablePass.text = ""
+                lablePass.text = String()
                 passwordEmtry = true
             }
         case textRepassword:
@@ -86,7 +90,7 @@ extension CreateVC: UITextFieldDelegate {
                 lableRepass.text = "incorrect"
                 repasswordEmtry = false
             } else {
-                lableRepass.text = ""
+                lableRepass.text = String()
             }
         default: break
         }
