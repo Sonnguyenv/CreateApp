@@ -26,6 +26,9 @@
 		302AA96B21E8502E004580BD /* CreateAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AA96A21E8502E004580BD /* CreateAppTests.swift */; };
 		302AA97621E8502E004580BD /* CreateAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AA97521E8502E004580BD /* CreateAppUITests.swift */; };
 		302AA98421E8521F004580BD /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AA98321E8521F004580BD /* CreateVC.swift */; };
+		303AB34321FABCA5003032F9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34221FABCA5003032F9 /* CustomButton.swift */; };
+		303AB34621FABCE9003032F9 /* CacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34521FABCE9003032F9 /* CacheImage.swift */; };
+		303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */; };
 		30DA9E9621F7FAA400BFF639 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA9E9521F7FAA400BFF639 /* TabBarVC.swift */; };
 		30DBCF8921F81D9400332723 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBCF8821F81D9400332723 /* MainVC.swift */; };
 		30DBCF8B21F820AB00332723 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBCF8A21F820AB00332723 /* PageViewController.swift */; };
@@ -74,6 +77,9 @@
 		302AA97521E8502E004580BD /* CreateAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppUITests.swift; sourceTree = "<group>"; };
 		302AA97721E8502E004580BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		302AA98321E8521F004580BD /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
+		303AB34221FABCA5003032F9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		303AB34521FABCE9003032F9 /* CacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImage.swift; sourceTree = "<group>"; };
+		303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		30DA9E9521F7FAA400BFF639 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		30DBCF8821F81D9400332723 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		30DBCF8A21F820AB00332723 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				302AA95421E8502C004580BD /* CreateApp */,
+				303AB34121FABC89003032F9 /* Custom Button */,
 				302AA96921E8502E004580BD /* CreateAppTests */,
 				302AA97421E8502E004580BD /* CreateAppUITests */,
 				302AA95321E8502C004580BD /* Products */,
@@ -165,6 +172,7 @@
 				30DA9E9521F7FAA400BFF639 /* TabBarVC.swift */,
 				30DBCF8821F81D9400332723 /* MainVC.swift */,
 				30DBCF8A21F820AB00332723 /* PageViewController.swift */,
+				303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */,
 				302AA95921E8502C004580BD /* Main.storyboard */,
 				302AA95C21E8502E004580BD /* Assets.xcassets */,
 				302AA95E21E8502E004580BD /* LaunchScreen.storyboard */,
@@ -172,6 +180,7 @@
 				301ECB8C21F6D5E800454F27 /* PopularAPI */,
 				301ECB8521F6D5B900454F27 /* EventsAPI */,
 				301ECB7C21F6D56200454F27 /* NewsAPI */,
+				303AB34421FABCCF003032F9 /* Cache Image */,
 				30DBCF8721F80D1000332723 /* HTMLToAttributedString */,
 			);
 			path = CreateApp;
@@ -193,6 +202,22 @@
 				302AA97721E8502E004580BD /* Info.plist */,
 			);
 			path = CreateAppUITests;
+			sourceTree = "<group>";
+		};
+		303AB34121FABC89003032F9 /* Custom Button */ = {
+			isa = PBXGroup;
+			children = (
+				303AB34221FABCA5003032F9 /* CustomButton.swift */,
+			);
+			path = "Custom Button";
+			sourceTree = "<group>";
+		};
+		303AB34421FABCCF003032F9 /* Cache Image */ = {
+			isa = PBXGroup;
+			children = (
+				303AB34521FABCE9003032F9 /* CacheImage.swift */,
+			);
+			path = "Cache Image";
 			sourceTree = "<group>";
 		};
 		30DBCF8721F80D1000332723 /* HTMLToAttributedString */ = {
@@ -336,6 +361,7 @@
 			files = (
 				302AA95821E8502C004580BD /* ViewController.swift in Sources */,
 				301ECB8B21F6D5E200454F27 /* MainEvents.swift in Sources */,
+				303AB34321FABCA5003032F9 /* CustomButton.swift in Sources */,
 				301ECB8421F6D59700454F27 /* NewsTableViewCell.swift in Sources */,
 				301ECB8A21F6D5E200454F27 /* HTMLToAttributedString.swift in Sources */,
 				302AA98421E8521F004580BD /* CreateVC.swift in Sources */,
@@ -344,12 +370,14 @@
 				301ECB9221F6D5FF00454F27 /* PopularTableViewCell.swift in Sources */,
 				30DBCF8B21F820AB00332723 /* PageViewController.swift in Sources */,
 				301ECB9B21F6D94200454F27 /* EventsVC.swift in Sources */,
+				303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */,
 				302AA95621E8502C004580BD /* AppDelegate.swift in Sources */,
 				301ECB9321F6D5FF00454F27 /* MainPopular.swift in Sources */,
 				301ECB8321F6D59700454F27 /* InforNewsVC.swift in Sources */,
 				301ECB8221F6D59700454F27 /* MainNews.swift in Sources */,
 				301ECB9921F6D8DE00454F27 /* NewsVC.swift in Sources */,
 				30DA9E9621F7FAA400BFF639 /* TabBarVC.swift in Sources */,
+				303AB34621FABCE9003032F9 /* CacheImage.swift in Sources */,
 				301ECB9521F6D5FF00454F27 /* InforPopularVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

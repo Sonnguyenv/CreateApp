@@ -14,9 +14,9 @@ class NewsVC: UIViewController {
             guard let data = data else { return }
             do {
                 let json = try JSONDecoder().decode(NewsAPI.self, from: data)
-            
+                guard let news = json.response?.news else { return }
                 DispatchQueue.main.async {
-                    self.newsArray = (json.response?.news)!
+                    self.newsArray = news
                     self.myTable.reloadData()
                 }
             } catch {}
@@ -31,20 +31,11 @@ extension NewsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell
-        cell.titleLable.text = newsArray[indexPath.row].title
-        cell.dateLable.text = newsArray[indexPath.row].publish_date
-        if let urlImage = URL(string: newsArray[indexPath.row].thumb_img ?? "") {
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: urlImage)
-                if let data = data {
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        cell.imgeView.image = image
-                    }
-                }
-            }
-        }
-        
+        cell.titleLableNews.text = newsArray[indexPath.row].title
+        cell.dateLableNews.text = newsArray[indexPath.row].publish_date
+        // Cache Image
+        let urlImageArray = newsArray[indexPath.row].thumb_img
+        cell.imgeNews.cacheImage(urlString: urlImageArray ?? "")
         return cell
     }
 }

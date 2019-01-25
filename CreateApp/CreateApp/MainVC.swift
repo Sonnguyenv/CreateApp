@@ -1,6 +1,8 @@
 
 import UIKit
 
+
+
 class MainVC: UIViewController {
     
     @IBOutlet weak var newsButton: UIButton!
@@ -9,6 +11,8 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        newsButton.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
+        popularButton.backgroundColor = #colorLiteral(red: 0.4352941176, green: 0.4431372549, blue: 0.4745098039, alpha: 1)
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -21,7 +25,7 @@ class MainVC: UIViewController {
    
     @IBAction func preNews(_ sender: Any) {
         page?.moveToPage(0)
-        newsButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        newsButton.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
         popularButton.backgroundColor = #colorLiteral(red: 0.4352941176, green: 0.4431372549, blue: 0.4745098039, alpha: 1)
     }
     
@@ -32,7 +36,7 @@ class MainVC: UIViewController {
     
     @IBAction func nextPopular(_ sender: Any) {
         page?.moveToPage(1)
-        popularButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        popularButton.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
         newsButton.backgroundColor = #colorLiteral(red: 0.4352941176, green: 0.4431372549, blue: 0.4745098039, alpha: 1)
     }
     

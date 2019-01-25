@@ -26,19 +26,41 @@ class CreateVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerView.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        registerView.layer.borderWidth = 5
         registerView.layer.cornerRadius = 10
         textUser.text = usertext
         
     }
 
-    @IBAction func register(_ sender: Any) {
-        delegate?.showData(dataUser: textUser.text ?? "", dataPassword: textPassword.text ?? "")
+    @IBAction func register(_ sender: UIButton) {
+        sender.shake()
+        delegate?.showData(dataUser: textEmail.text ?? "", dataPassword: textPassword.text ?? "")
         if textPassword.text == textRepassword.text {
             repasswordEmtry = true
         }
         if userEmtry && emailEmtry && passwordEmtry && repasswordEmtry {
             navigationController?.popViewController(animated: true)
         }
+        
+        let parameters = ["name": textUser.text ,"email": textEmail.text, "password": textPassword.text]
+        guard let url = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/register") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+        print(httpBody)
+        request.httpBody = httpBody
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    print(error)
+                }
+            }
+        }.resume()
     }
     
     func checkPasswordValidation(_ password: String) -> Bool {

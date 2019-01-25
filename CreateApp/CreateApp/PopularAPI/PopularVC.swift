@@ -15,9 +15,9 @@ class PopularVC: UIViewController {
             guard let data = data else { return }
             do {
                 let json = try JSONDecoder().decode(PopularAPI.self, from: data)
-                
+                guard let events = json.response?.events else { return }
                 DispatchQueue.main.async {
-                    self.eventsArray = (json.response?.events)! 
+                    self.eventsArray = events
                     self.myTableView.reloadData()
                 }
             } catch {}
@@ -33,18 +33,12 @@ extension PopularVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:
             "PopularTableViewCell", for: indexPath) as! PopularTableViewCell
-        cell.nameLable.text = eventsArray[indexPath.row].name
-        if let urlImage = URL(string: eventsArray[indexPath.row].photo ?? "") {
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: urlImage)
-                if let data = data {
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        cell.imgView.image = image
-                    }
-                }
-            }
-        }
+        cell.nameLablePopular.text = eventsArray[indexPath.row].name
+        cell.nameLable.text = eventsArray[indexPath.row].venue?.name
+        cell.descriptionLable.text = eventsArray[indexPath.row].venue?.description
+        // Cache Image
+        let urlImageArray = eventsArray[indexPath.row].photo
+        cell.imgPopular.cacheImage(urlString: urlImageArray ?? "")
         return cell
     }
 }
@@ -52,7 +46,8 @@ extension PopularVC: UITableViewDataSource {
 extension PopularVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250    }
+        return 200
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -63,7 +58,6 @@ extension PopularVC: UITableViewDelegate {
         screen.textEndTime = eventsArray[indexPath.row].schedule_end_time ?? ""
         screen.textStartDate = eventsArray[indexPath.row].schedule_start_date ?? ""
         screen.textEndDate = eventsArray[indexPath.row].schedule_end_date ?? ""
-    
         navigationController?.pushViewController(screen, animated: true)
     }
 }

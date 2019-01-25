@@ -32,12 +32,6 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         case 0:
             setViewControllers([subViewControllers[0]], direction: .reverse, animated: true, completion: nil)
             currentIndex = 0
-//        case 1:
-//            if currentIndex == 0 {
-//                setViewControllers([subViewControllers[1]], direction: .forward, animated: true, completion: nil)
-//            } else {
-//                setViewControllers([subViewControllers[1]], direction: .reverse, animated: true, completion: nil)
-//            }
         default:
             setViewControllers([subViewControllers[1]], direction: .forward, animated: true, completion: nil)
 //        default:
