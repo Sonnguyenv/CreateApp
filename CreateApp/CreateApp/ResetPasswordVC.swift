@@ -8,7 +8,9 @@ class ResetPasswordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       self.resetView.layer.cornerRadius = 10
+        resetView.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        resetView.layer.borderWidth = 5
+        resetView.layer.cornerRadius = 10
     }
     @IBAction func resetPassword(_ sender: UIButton) {
         sender.flash()
@@ -33,7 +35,6 @@ class ResetPasswordVC: UIViewController {
                     print(error)
                 }
             }
-            }.resume()
+        }.resume()
     }
-    
 }

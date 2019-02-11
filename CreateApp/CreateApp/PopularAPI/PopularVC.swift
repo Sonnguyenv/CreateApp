@@ -4,7 +4,7 @@ import UIKit
 class PopularVC: UIViewController {
     
     var eventsArray  = [EventsPopular]()
-
+    
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ extension PopularVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:
-            "PopularTableViewCell", for: indexPath) as! PopularTableViewCell
+            "PopularTableViewCell") as! PopularTableViewCell
         cell.nameLablePopular.text = eventsArray[indexPath.row].name
         cell.nameLable.text = eventsArray[indexPath.row].venue?.name
         cell.descriptionLable.text = eventsArray[indexPath.row].venue?.description
@@ -44,7 +44,6 @@ extension PopularVC: UITableViewDataSource {
 }
 
 extension PopularVC: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }

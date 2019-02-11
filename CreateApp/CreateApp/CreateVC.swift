@@ -22,7 +22,7 @@ class CreateVC: UIViewController {
     var usertext = String()
     var passwordtext = String()
     
-    weak var delegate: Delegate?
+    weak var delegate: DelegateData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +76,7 @@ class CreateVC: UIViewController {
     }
 }
 
-protocol Delegate : class {
+protocol DelegateData : class {
     func showData(dataUser: String, dataPassword: String)
 }
 

@@ -1,16 +1,19 @@
 
 import UIKit
 
+protocol ColorDelegate: class {
+    func changeButtonColor(_ number: Int)
+}
+
 class PageViewController: UIPageViewController {
     
-    var currentIndex = 0
+    weak var delegateButton: ColorDelegate?
     
     lazy var subViewControllers: [UIViewController] = {
         return [
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsVC") as! NewsVC,
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopularVC") as! PopularVC
-//            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EventsVC") as! EventsVC
-        ]
+                ]
     }()
     
     override func viewDidLoad() {
@@ -31,12 +34,10 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         switch index {
         case 0:
             setViewControllers([subViewControllers[0]], direction: .reverse, animated: true, completion: nil)
-            currentIndex = 0
+            delegateButton?.changeButtonColor(0)
         default:
             setViewControllers([subViewControllers[1]], direction: .forward, animated: true, completion: nil)
-//        default:
-//            setViewControllers([subViewControllers[2]], direction: .forward, animated: true, completion: nil)
-//            currentIndex = 2
+            delegateButton?.changeButtonColor(1)
         }
     }
     

@@ -17,12 +17,5 @@ class InforNewsVC: UIViewController {
         titleNews.text = titleNew
         inforLable.text = inforNew
         authorLable.text = author
-        
-        let btnA = UIButton.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        self.navigationController?.navigationItem.hidesBackButton = true
-        btnA.backgroundColor = UIColor.green
-        let buttonItem = UIBarButtonItem.init(title: "", style: .plain, target: self, action: nil)
-        self.navigationItem.backBarButtonItem = buttonItem
     }
-
 }
