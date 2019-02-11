@@ -15,7 +15,7 @@ class ResetPasswordVC: UIViewController {
     }
     @IBAction func resetPassword(_ sender: UIButton) {
         sender.flash()
-        
+//        POST ResetPassWord
         let parameters = ["email": textResetPassword.text]
         guard let url = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/resetPassword") else { return }
         var request = URLRequest(url: url)

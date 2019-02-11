@@ -28,6 +28,9 @@
 		303AB34621FABCE9003032F9 /* CacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34521FABCE9003032F9 /* CacheImage.swift */; };
 		303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */; };
 		30A4283E2211179B0005E26C /* ResponseSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A4283D2211179B0005E26C /* ResponseSample.swift */; };
+		30A428422211718A0005E26C /* BrowsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A428412211718A0005E26C /* BrowsVC.swift */; };
+		30A428462211776C0005E26C /* BrowsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A428452211776C0005E26C /* BrowsTableViewCell.swift */; };
+		30A42848221178BE0005E26C /* BrowsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A42847221178BE0005E26C /* BrowsAPI.swift */; };
 		30DA9E9621F7FAA400BFF639 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA9E9521F7FAA400BFF639 /* TabBarVC.swift */; };
 		30DBCF8921F81D9400332723 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBCF8821F81D9400332723 /* MainVC.swift */; };
 		30DBCF8B21F820AB00332723 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBCF8A21F820AB00332723 /* PageViewController.swift */; };
@@ -79,6 +82,9 @@
 		303AB34521FABCE9003032F9 /* CacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImage.swift; sourceTree = "<group>"; };
 		303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		30A4283D2211179B0005E26C /* ResponseSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSample.swift; sourceTree = "<group>"; };
+		30A428412211718A0005E26C /* BrowsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsVC.swift; sourceTree = "<group>"; };
+		30A428452211776C0005E26C /* BrowsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsTableViewCell.swift; sourceTree = "<group>"; };
+		30A42847221178BE0005E26C /* BrowsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsAPI.swift; sourceTree = "<group>"; };
 		30DA9E9521F7FAA400BFF639 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		30DBCF8821F81D9400332723 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		30DBCF8A21F820AB00332723 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 				302AA95C21E8502E004580BD /* Assets.xcassets */,
 				302AA95E21E8502E004580BD /* LaunchScreen.storyboard */,
 				302AA96121E8502E004580BD /* Info.plist */,
+				30A42844221176E10005E26C /* Brows */,
 				30F83F5D21FEA9CB00593A68 /* PageViewController */,
 				30F83F5E21FEE71900593A68 /* NearVC */,
 				301ECB8C21F6D5E800454F27 /* PopularAPI */,
@@ -217,6 +224,16 @@
 				30A4283D2211179B0005E26C /* ResponseSample.swift */,
 			);
 			path = "Post API";
+			sourceTree = "<group>";
+		};
+		30A42844221176E10005E26C /* Brows */ = {
+			isa = PBXGroup;
+			children = (
+				30A42847221178BE0005E26C /* BrowsAPI.swift */,
+				30A428412211718A0005E26C /* BrowsVC.swift */,
+				30A428452211776C0005E26C /* BrowsTableViewCell.swift */,
+			);
+			path = Brows;
 			sourceTree = "<group>";
 		};
 		30DBCF8721F80D1000332723 /* HTMLToAttributedString */ = {
@@ -380,6 +397,7 @@
 				301ECB8421F6D59700454F27 /* NewsTableViewCell.swift in Sources */,
 				301ECB8A21F6D5E200454F27 /* HTMLToAttributedString.swift in Sources */,
 				302AA98421E8521F004580BD /* CreateVC.swift in Sources */,
+				30A428462211776C0005E26C /* BrowsTableViewCell.swift in Sources */,
 				30DBCF8921F81D9400332723 /* MainVC.swift in Sources */,
 				301ECB9D21F6D95300454F27 /* PopularVC.swift in Sources */,
 				301ECB9221F6D5FF00454F27 /* PopularTableViewCell.swift in Sources */,
@@ -390,9 +408,11 @@
 				30F83F6021FEE74B00593A68 /* NearVC.swift in Sources */,
 				30A4283E2211179B0005E26C /* ResponseSample.swift in Sources */,
 				301ECB8321F6D59700454F27 /* InforNewsVC.swift in Sources */,
+				30A428422211718A0005E26C /* BrowsVC.swift in Sources */,
 				301ECB8221F6D59700454F27 /* MainNews.swift in Sources */,
 				301ECB9921F6D8DE00454F27 /* NewsVC.swift in Sources */,
 				30DA9E9621F7FAA400BFF639 /* TabBarVC.swift in Sources */,
+				30A42848221178BE0005E26C /* BrowsAPI.swift in Sources */,
 				303AB34621FABCE9003032F9 /* CacheImage.swift in Sources */,
 				301ECB9521F6D5FF00454F27 /* InforPopularVC.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 
-import UIKit
+import Foundation
 struct ResponseSample: Decodable {
     let status: Int
     let response: Response?

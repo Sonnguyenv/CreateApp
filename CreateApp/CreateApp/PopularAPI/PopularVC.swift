@@ -9,7 +9,7 @@ class PopularVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//         Get Method
         guard let url = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/listPopularEvents") else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }

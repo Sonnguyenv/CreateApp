@@ -30,7 +30,6 @@ class CreateVC: UIViewController {
         registerView.layer.borderWidth = 5
         registerView.layer.cornerRadius = 10
         textUser.text = usertext
-        
     }
 
     @IBAction func register(_ sender: UIButton) {
@@ -42,7 +41,7 @@ class CreateVC: UIViewController {
         if userEmtry && emailEmtry && passwordEmtry && repasswordEmtry {
             navigationController?.popViewController(animated: true)
         }
-        
+//        POST Method CreatApp
         let parameters = ["name": textUser.text ,"email": textEmail.text, "password": textPassword.text]
         guard let urlLogin = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/login") else { return }
         var request = URLRequest(url: urlLogin)

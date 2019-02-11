@@ -15,7 +15,7 @@ class LoginVC: UIViewController {
         loginView.layer.borderWidth = 5
         loginView.layer.cornerRadius = 10
         textEmail.text = "dreamsonss@gmail.com"
-        textPassword.text = "Daucoma123"
+        textPassword.text = "NmpXvfq1"
     }
     
     @IBAction func creatAccount(_ sender: UIButton) {
@@ -29,7 +29,7 @@ class LoginVC: UIViewController {
     
     @IBAction func login(_ sender: UIButton) {
         sender.pulsate()
-        
+//        POST Method Login
         let parameters = ["email": textEmail.text, "password": textPassword.text]
         guard let urlLogin = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/login") else { return }
         var request = URLRequest(url: urlLogin)
