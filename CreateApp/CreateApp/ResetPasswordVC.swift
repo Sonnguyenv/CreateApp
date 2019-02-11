@@ -11,6 +11,7 @@ class ResetPasswordVC: UIViewController {
         resetView.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         resetView.layer.borderWidth = 5
         resetView.layer.cornerRadius = 10
+//        textResetPassword.text = "dreamsonss@gmail.com"
     }
     @IBAction func resetPassword(_ sender: UIButton) {
         sender.flash()
@@ -21,19 +22,12 @@ class ResetPasswordVC: UIViewController {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
-        print(httpBody)
         request.httpBody = httpBody
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
             if let data = data {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                } catch {
-                    print(error)
-                }
+                    let json = try JSONDecoder().decode(ResponseSample.self, from: data)
+                } catch {}
             }
         }.resume()
     }

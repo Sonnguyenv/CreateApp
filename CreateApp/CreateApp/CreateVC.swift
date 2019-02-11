@@ -44,21 +44,17 @@ class CreateVC: UIViewController {
         }
         
         let parameters = ["name": textUser.text ,"email": textEmail.text, "password": textPassword.text]
-        guard let url = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/register") else { return }
-        var request = URLRequest(url: url)
+        guard let urlLogin = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/login") else { return }
+        var request = URLRequest(url: urlLogin)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
-        print(httpBody)
         request.httpBody = httpBody
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                } catch {
-                    print(error)
-                }
+                    let json = try JSONDecoder().decode(ResponseSample.self, from: data)
+                } catch {}
             }
         }.resume()
     }
