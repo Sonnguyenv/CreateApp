@@ -4,14 +4,18 @@ import UIKit
 class BrowsVC: UIViewController {
 
     var categoriesArray = [Categories]()
+    var searchArray = [Categories]()
+    var evenArraySearch = [EventsPopular]()
+    var searching = false
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var BrowsTableCell: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let url = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/listCategories") else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        guard let urlCategories = URL(string: URlString.urlListCategories) else { return }
+        URLSession.shared.dataTask(with: urlCategories) { (data, response, error) in
             guard let data = data else { return }
             do {
                 let json = try JSONDecoder().decode(CategoriesAPI.self, from: data)
@@ -41,4 +45,12 @@ extension BrowsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let screen = storyboard.instantiateViewController(withIdentifier: "PopularVC") as! PopularVC
+        screen.categoryID = categoriesArray[indexPath.row].id
+        navigationController?.pushViewController(screen, animated: true)
+    }
 }
+

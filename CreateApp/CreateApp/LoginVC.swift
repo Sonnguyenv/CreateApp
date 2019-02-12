@@ -31,7 +31,7 @@ class LoginVC: UIViewController {
         sender.pulsate()
 //        POST Method Login
         let parameters = ["email": textEmail.text, "password": textPassword.text]
-        guard let urlLogin = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/login") else { return }
+        guard let urlLogin = URL(string: URlString.urlLogin) else { return }
         var request = URLRequest(url: urlLogin)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -43,9 +43,10 @@ class LoginVC: UIViewController {
                     let json = try JSONDecoder().decode(ResponseSample.self, from: data)
                         DispatchQueue.main.async {
                             if json.status == 1 {
-                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                let screen = storyboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
-                                self.navigationController?.pushViewController(screen, animated: true)
+                                print("Hi")
+//                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                                let screen = storyboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+//                                self.navigationController?.pushViewController(screen, animated: true)
                             } else {
                                 print("Error")
                             }

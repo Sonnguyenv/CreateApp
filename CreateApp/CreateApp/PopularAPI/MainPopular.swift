@@ -9,6 +9,7 @@ struct PopularAPI: Decodable {
 
 struct ResponsePopular: Decodable {
     let events: [EventsPopular]?
+    let user_events: [UserEvents]?
 }
 
 struct EventsPopular: Decodable {
@@ -32,4 +33,11 @@ struct VenuePopular: Decodable {
     let name: String?
     let type: Int
     let description: String?
+}
+
+struct UserEvents: Decodable {
+    let id: Int
+    let event_id: Int
+    let user_id: Int
+    let status: Int
 }

@@ -43,7 +43,7 @@ class CreateVC: UIViewController {
         }
 //        POST Method CreatApp
         let parameters = ["name": textUser.text ,"email": textEmail.text, "password": textPassword.text]
-        guard let urlLogin = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/login") else { return }
+        guard let urlLogin = URL(string: URlString.urlRegister) else { return }
         var request = URLRequest(url: urlLogin)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

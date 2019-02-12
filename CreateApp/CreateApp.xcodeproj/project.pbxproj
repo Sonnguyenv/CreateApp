@@ -24,6 +24,8 @@
 		302AA96B21E8502E004580BD /* CreateAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AA96A21E8502E004580BD /* CreateAppTests.swift */; };
 		302AA97621E8502E004580BD /* CreateAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AA97521E8502E004580BD /* CreateAppUITests.swift */; };
 		302AA98421E8521F004580BD /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AA98321E8521F004580BD /* CreateVC.swift */; };
+		303194CF2212B18800894C1C /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303194CE2212B18800894C1C /* URLString.swift */; };
+		303194D12212D64500894C1C /* GetMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303194D02212D64500894C1C /* GetMethod.swift */; };
 		303AB34321FABCA5003032F9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34221FABCA5003032F9 /* CustomButton.swift */; };
 		303AB34621FABCE9003032F9 /* CacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34521FABCE9003032F9 /* CacheImage.swift */; };
 		303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */; };
@@ -78,6 +80,8 @@
 		302AA97521E8502E004580BD /* CreateAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppUITests.swift; sourceTree = "<group>"; };
 		302AA97721E8502E004580BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		302AA98321E8521F004580BD /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
+		303194CE2212B18800894C1C /* URLString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
+		303194D02212D64500894C1C /* GetMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMethod.swift; sourceTree = "<group>"; };
 		303AB34221FABCA5003032F9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		303AB34521FABCE9003032F9 /* CacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImage.swift; sourceTree = "<group>"; };
 		303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				302AA95521E8502C004580BD /* AppDelegate.swift */,
+				303194D02212D64500894C1C /* GetMethod.swift */,
+				303194CE2212B18800894C1C /* URLString.swift */,
 				302AA95721E8502C004580BD /* LoginVC.swift */,
 				302AA98321E8521F004580BD /* CreateVC.swift */,
 				303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */,
@@ -396,6 +402,7 @@
 				303AB34321FABCA5003032F9 /* CustomButton.swift in Sources */,
 				301ECB8421F6D59700454F27 /* NewsTableViewCell.swift in Sources */,
 				301ECB8A21F6D5E200454F27 /* HTMLToAttributedString.swift in Sources */,
+				303194D12212D64500894C1C /* GetMethod.swift in Sources */,
 				302AA98421E8521F004580BD /* CreateVC.swift in Sources */,
 				30A428462211776C0005E26C /* BrowsTableViewCell.swift in Sources */,
 				30DBCF8921F81D9400332723 /* MainVC.swift in Sources */,
@@ -404,6 +411,7 @@
 				30DBCF8B21F820AB00332723 /* PageViewController.swift in Sources */,
 				303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */,
 				302AA95621E8502C004580BD /* AppDelegate.swift in Sources */,
+				303194CF2212B18800894C1C /* URLString.swift in Sources */,
 				301ECB9321F6D5FF00454F27 /* MainPopular.swift in Sources */,
 				30F83F6021FEE74B00593A68 /* NearVC.swift in Sources */,
 				30A4283E2211179B0005E26C /* ResponseSample.swift in Sources */,

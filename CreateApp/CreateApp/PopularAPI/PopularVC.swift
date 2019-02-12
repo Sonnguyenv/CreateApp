@@ -3,6 +3,8 @@ import UIKit
 
 class PopularVC: UIViewController {
     
+    var categoryID = ID
+    
     var eventsArray  = [EventsPopular]()
     
     @IBOutlet weak var myTableView: UITableView!
@@ -10,18 +12,21 @@ class PopularVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //         Get Method
-        guard let url = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/listPopularEvents") else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let json = try JSONDecoder().decode(PopularAPI.self, from: data)
-                guard let events = json.response?.events else { return }
-                DispatchQueue.main.async {
-                    self.eventsArray = events
-                    self.myTableView.reloadData()
-                }
-            } catch {}
-        }.resume()
+        
+        fetchGenericData(urlString: URlString.urlListEventsByCategory) { (popular: PopularAPI) in }
+        
+//        guard let url = URL(string: URlString.urlListEventsByCategory) else { return }
+//        URLSession.shared.dataTask(with: url) { (data, response, error) in
+//            guard let data = data else { return }
+//            do {
+//                let json = try JSONDecoder().decode(PopularAPI.self, from: data)
+//                guard let events = json.response?.events else { return }
+//                DispatchQueue.main.async {
+//                    self.eventsArray = events
+//                    self.myTableView.reloadData()
+//                }
+//            } catch {}
+//        }.resume()
     }
 }
 
@@ -60,3 +65,5 @@ extension PopularVC: UITableViewDelegate {
         navigationController?.pushViewController(screen, animated: true)
     }
 }
+
+

@@ -12,7 +12,7 @@ class NearVC: UIViewController {
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.stopUpdatingLocation()
         let location =
-            CLLocationCoordinate2DMake(21.017854, 105.781125)
+            CLLocationCoordinate2DMake(21.017461, 105.780308)
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)

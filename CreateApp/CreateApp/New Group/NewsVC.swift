@@ -9,7 +9,7 @@ class NewsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let urlString = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/listNews") else { return }
+        guard let urlString = URL(string: URlString.urlNews) else { return }
         URLSession.shared.dataTask(with: urlString) { (data, response, error) in
             guard let data = data else { return }
             do {

@@ -402,30 +402,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="e7M-7a-b7n">
-                                <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e7M-7a-b7n">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="He7-EJ-tvd"/>
-                                    <constraint firstAttribute="width" constant="290" id="SPe-mf-pOs"/>
-                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="ckd-jx-rrA" id="ngt-OM-Xvk"/>
+                                </connections>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiY-GB-enZ">
-                                <rect key="frame" x="290" y="0.0" width="124" height="50"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="23"/>
-                                <size key="titleShadowOffset" width="-1" height="-1"/>
-                                <state key="normal" title="Search">
-                                    <color key="titleColor" red="0.877561971" green="0.93727842530000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.48234318617150063" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x40-1a-hlz">
-                                <rect key="frame" x="0.0" y="50" width="414" height="573"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="567"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowsTableViewCell" rowHeight="50" id="5he-1A-SNh" customClass="BrowsTableViewCell" customModule="CreateApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BrowsTableViewCell" rowHeight="50" id="5he-1A-SNh" customClass="BrowsTableViewCell" customModule="CreateApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5he-1A-SNh" id="4tN-rl-fNs">
@@ -459,23 +452,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="x40-1a-hlz" firstAttribute="top" secondItem="e7M-7a-b7n" secondAttribute="bottom" id="1nf-br-Mh6"/>
+                            <constraint firstItem="UH7-NS-QEj" firstAttribute="trailing" secondItem="e7M-7a-b7n" secondAttribute="trailing" id="Avc-wQ-3BV"/>
                             <constraint firstItem="x40-1a-hlz" firstAttribute="leading" secondItem="UH7-NS-QEj" secondAttribute="leading" id="BsP-ug-yRC"/>
-                            <constraint firstItem="RiY-GB-enZ" firstAttribute="height" secondItem="e7M-7a-b7n" secondAttribute="height" id="DPl-bw-y8Z"/>
-                            <constraint firstItem="RiY-GB-enZ" firstAttribute="centerY" secondItem="e7M-7a-b7n" secondAttribute="centerY" id="Dvf-Ye-avs"/>
+                            <constraint firstItem="e7M-7a-b7n" firstAttribute="leading" secondItem="UH7-NS-QEj" secondAttribute="leading" id="Pg2-oF-34U"/>
                             <constraint firstItem="UH7-NS-QEj" firstAttribute="trailing" secondItem="x40-1a-hlz" secondAttribute="trailing" id="RbO-GB-kSu"/>
-                            <constraint firstItem="RiY-GB-enZ" firstAttribute="top" secondItem="UH7-NS-QEj" secondAttribute="top" id="eUs-cQ-uf5"/>
-                            <constraint firstItem="e7M-7a-b7n" firstAttribute="top" secondItem="UH7-NS-QEj" secondAttribute="top" id="kh7-iB-aii"/>
-                            <constraint firstItem="e7M-7a-b7n" firstAttribute="leading" secondItem="UH7-NS-QEj" secondAttribute="leading" id="m2q-ol-IrP"/>
-                            <constraint firstItem="x40-1a-hlz" firstAttribute="top" secondItem="e7M-7a-b7n" secondAttribute="bottom" id="sdY-uS-jbh"/>
                             <constraint firstItem="UH7-NS-QEj" firstAttribute="bottom" secondItem="x40-1a-hlz" secondAttribute="bottom" id="ul3-4x-Ihu"/>
-                            <constraint firstItem="RiY-GB-enZ" firstAttribute="trailing" secondItem="UH7-NS-QEj" secondAttribute="trailing" id="w81-Yc-Pra"/>
-                            <constraint firstItem="RiY-GB-enZ" firstAttribute="leading" secondItem="e7M-7a-b7n" secondAttribute="trailing" id="x6I-gS-4Jg"/>
+                            <constraint firstItem="e7M-7a-b7n" firstAttribute="top" secondItem="UH7-NS-QEj" secondAttribute="top" id="yyO-Zn-G8i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UH7-NS-QEj"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Brows" image="search" id="Pzj-bX-df4"/>
                     <connections>
                         <outlet property="BrowsTableCell" destination="x40-1a-hlz" id="vpc-fs-VOY"/>
+                        <outlet property="searchBar" destination="e7M-7a-b7n" id="T6D-t5-5pC"/>
                         <outlet property="searchDisplayController" destination="1Ib-21-4G3" id="USP-wO-Mov"/>
                     </connections>
                 </viewController>
