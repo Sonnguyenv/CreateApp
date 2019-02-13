@@ -29,31 +29,10 @@ class LoginVC: UIViewController {
     
     @IBAction func login(_ sender: UIButton) {
         sender.pulsate()
-//        POST Method Login
-        let parameters = ["email": textEmail.text, "password": textPassword.text]
-        guard let urlLogin = URL(string: URlString.urlLogin) else { return }
-        var request = URLRequest(url: urlLogin)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
-        request.httpBody = httpBody
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let data = data {
-                do {
-                    let json = try JSONDecoder().decode(ResponseSample.self, from: data)
-                        DispatchQueue.main.async {
-                            if json.status == 1 {
-                                print("Hi")
-//                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                                let screen = storyboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
-//                                self.navigationController?.pushViewController(screen, animated: true)
-                            } else {
-                                print("Error")
-                            }
-                        }
-                } catch {}
-            }
-        }.resume()
+//        POST Generic Login
+        postGenericData(urlString: URLString.urlLogin, parameters: ["email": textEmail.text, "password": textPassword.text]) { (json: ResponseSample) in
+            print(json.status)
+        }
     }
     
     @IBAction func forgotPassword(_ sender: Any) {

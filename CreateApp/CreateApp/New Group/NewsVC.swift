@@ -4,27 +4,23 @@ import UIKit
 class NewsVC: UIViewController {
     
     @IBOutlet weak var myTable: UITableView!
-    
     var newsArray = [News]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let urlString = URL(string: URlString.urlNews) else { return }
-        URLSession.shared.dataTask(with: urlString) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let json = try JSONDecoder().decode(NewsAPI.self, from: data)
-                guard let news = json.response?.news else { return }
-                DispatchQueue.main.async {
-                    self.newsArray = news
-                    self.myTable.reloadData()
-                }
-            } catch {}
-        }.resume()
+        // Generic Get Method
+        getGenericData(urlString: URLString.urlNews) {(json: NewsAPI) in
+            guard let news = json.response?.news else { return }
+            DispatchQueue.main.async {
+                self.newsArray = news
+                self.myTable.reloadData()
+            }
+        }
     }
 }
 
 extension NewsVC: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsArray.count
     }

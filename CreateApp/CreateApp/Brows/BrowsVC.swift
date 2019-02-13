@@ -14,18 +14,13 @@ class BrowsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let urlCategories = URL(string: URlString.urlListCategories) else { return }
-        URLSession.shared.dataTask(with: urlCategories) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let json = try JSONDecoder().decode(CategoriesAPI.self, from: data)
-                guard let categories = json.response?.categories else { return }
-                DispatchQueue.main.async {
-                    self.categoriesArray = categories
-                    self.BrowsTableCell.reloadData()
-                }
-            }catch{}
-        }.resume()
+        getGenericData(urlString: URLString.urlListCategories) { (json: CategoriesAPI) in
+            guard let categories = json.response?.categories else { return }
+            DispatchQueue.main.async {
+                self.categoriesArray = categories
+                self.BrowsTableCell.reloadData()
+            }
+        }
     }
 }
 

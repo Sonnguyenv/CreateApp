@@ -41,21 +41,11 @@ class CreateVC: UIViewController {
         if userEmtry && emailEmtry && passwordEmtry && repasswordEmtry {
             navigationController?.popViewController(animated: true)
         }
-//        POST Method CreatApp
-        let parameters = ["name": textUser.text ,"email": textEmail.text, "password": textPassword.text]
-        guard let urlLogin = URL(string: URlString.urlRegister) else { return }
-        var request = URLRequest(url: urlLogin)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
-        request.httpBody = httpBody
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let data = data {
-                do {
-                    let json = try JSONDecoder().decode(ResponseSample.self, from: data)
-                } catch {}
-            }
-        }.resume()
+    
+        //POST Generic Register
+        postGenericData(urlString: URLString.urlRegister, parameters: ["name": textUser.text ,"email": textEmail.text, "password": textPassword.text]) { (json: ResponseSample) in
+            print(json.status)
+        }
     }
     
     func checkPasswordValidation(_ password: String) -> Bool {

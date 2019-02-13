@@ -37,6 +37,7 @@
 		30DBCF8921F81D9400332723 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBCF8821F81D9400332723 /* MainVC.swift */; };
 		30DBCF8B21F820AB00332723 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBCF8A21F820AB00332723 /* PageViewController.swift */; };
 		30F83F6021FEE74B00593A68 /* NearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F83F5F21FEE74B00593A68 /* NearVC.swift */; };
+		30F9076E2213B9FB00F21AC0 /* PostMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9076D2213B9FB00F21AC0 /* PostMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		30DBCF8821F81D9400332723 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		30DBCF8A21F820AB00332723 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		30F83F5F21FEE74B00593A68 /* NearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearVC.swift; sourceTree = "<group>"; };
+		30F9076D2213B9FB00F21AC0 /* PostMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,16 +170,14 @@
 			isa = PBXGroup;
 			children = (
 				302AA95521E8502C004580BD /* AppDelegate.swift */,
-				303194D02212D64500894C1C /* GetMethod.swift */,
 				303194CE2212B18800894C1C /* URLString.swift */,
-				302AA95721E8502C004580BD /* LoginVC.swift */,
-				302AA98321E8521F004580BD /* CreateVC.swift */,
-				303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */,
 				30DA9E9521F7FAA400BFF639 /* TabBarVC.swift */,
 				302AA95921E8502C004580BD /* Main.storyboard */,
 				302AA95C21E8502E004580BD /* Assets.xcassets */,
 				302AA95E21E8502E004580BD /* LaunchScreen.storyboard */,
 				302AA96121E8502E004580BD /* Info.plist */,
+				30F9076F2213BA1D00F21AC0 /* MyPgae */,
+				30F907712213C16C00F21AC0 /* Generic Method */,
 				30A42844221176E10005E26C /* Brows */,
 				30F83F5D21FEA9CB00593A68 /* PageViewController */,
 				30F83F5E21FEE71900593A68 /* NearVC */,
@@ -265,6 +265,25 @@
 				30F83F5F21FEE74B00593A68 /* NearVC.swift */,
 			);
 			path = NearVC;
+			sourceTree = "<group>";
+		};
+		30F9076F2213BA1D00F21AC0 /* MyPgae */ = {
+			isa = PBXGroup;
+			children = (
+				302AA95721E8502C004580BD /* LoginVC.swift */,
+				302AA98321E8521F004580BD /* CreateVC.swift */,
+				303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */,
+			);
+			path = MyPgae;
+			sourceTree = "<group>";
+		};
+		30F907712213C16C00F21AC0 /* Generic Method */ = {
+			isa = PBXGroup;
+			children = (
+				30F9076D2213B9FB00F21AC0 /* PostMethod.swift */,
+				303194D02212D64500894C1C /* GetMethod.swift */,
+			);
+			path = "Generic Method";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F9076E2213B9FB00F21AC0 /* PostMethod.swift in Sources */,
 				302AA95821E8502C004580BD /* LoginVC.swift in Sources */,
 				303AB34321FABCA5003032F9 /* CustomButton.swift in Sources */,
 				301ECB8421F6D59700454F27 /* NewsTableViewCell.swift in Sources */,

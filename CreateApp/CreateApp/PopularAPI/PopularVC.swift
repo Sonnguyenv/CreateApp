@@ -4,33 +4,25 @@ import UIKit
 class PopularVC: UIViewController {
     
     var categoryID = ID
-    
     var eventsArray  = [EventsPopular]()
     
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//         Get Method
-        
-        fetchGenericData(urlString: URlString.urlListEventsByCategory) { (popular: PopularAPI) in }
-        
-//        guard let url = URL(string: URlString.urlListEventsByCategory) else { return }
-//        URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            guard let data = data else { return }
-//            do {
-//                let json = try JSONDecoder().decode(PopularAPI.self, from: data)
-//                guard let events = json.response?.events else { return }
-//                DispatchQueue.main.async {
-//                    self.eventsArray = events
-//                    self.myTableView.reloadData()
-//                }
-//            } catch {}
-//        }.resume()
+        // Generic Get Method
+        getGenericData(urlString: URLString.urlPopular) { (json: PopularAPI) in
+            guard let events = json.response?.events else { return }
+            DispatchQueue.main.async {
+                self.eventsArray = events
+                self.myTableView.reloadData()
+            }
+        }
     }
 }
 
 extension PopularVC: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventsArray.count
     }
