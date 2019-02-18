@@ -2,25 +2,28 @@
 import UIKit
 
 class BrowsVC: UIViewController {
-
-    var categoriesArray = [Categories]()
-    var searchArray = [Categories]()
-    var evenArraySearch = [EventsPopular]()
-    var searching = false
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var BrowsTableCell: UITableView!
+    var categoriesArray = [Categories]()
+    var evenArraySearch = [EventsPopular]()
+    
+    @IBOutlet weak var browsTableCell: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getGenericData(urlString: URLString.urlListCategories) { (json: CategoriesAPI) in
+        getGenericData(urlString: URLString.urlListCategories + "?pageIndex=1&pageSize=10") { (json: CategoriesAPI) in
             guard let categories = json.response?.categories else { return }
             DispatchQueue.main.async {
                 self.categoriesArray = categories
-                self.BrowsTableCell.reloadData()
+                self.browsTableCell.reloadData()
             }
         }
+    }
+    
+    @IBAction func searchButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let screen = storyboard.instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+        navigationController?.pushViewController(screen, animated: true)
     }
 }
 
@@ -45,7 +48,23 @@ extension BrowsVC: UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let screen = storyboard.instantiateViewController(withIdentifier: "PopularVC") as! PopularVC
         screen.categoryID = categoriesArray[indexPath.row].id
+        screen.index = 1
         navigationController?.pushViewController(screen, animated: true)
     }
+}
+
+extension BrowsVC: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let scrren = storyboard.instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+        present(scrren, animated: true, completion: nil)
+//        navigationController?.pushViewController(scrren, animated: true)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+
 }
 

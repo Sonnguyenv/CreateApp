@@ -29,6 +29,8 @@
 		303AB34321FABCA5003032F9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34221FABCA5003032F9 /* CustomButton.swift */; };
 		303AB34621FABCE9003032F9 /* CacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34521FABCE9003032F9 /* CacheImage.swift */; };
 		303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */; };
+		304225C1221A4C0B004B3D9E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304225C0221A4C0B004B3D9E /* SearchTableViewCell.swift */; };
+		304225C3221A4C27004B3D9E /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304225C2221A4C27004B3D9E /* SearchAPI.swift */; };
 		30A4283E2211179B0005E26C /* ResponseSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A4283D2211179B0005E26C /* ResponseSample.swift */; };
 		30A428422211718A0005E26C /* BrowsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A428412211718A0005E26C /* BrowsVC.swift */; };
 		30A428462211776C0005E26C /* BrowsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A428452211776C0005E26C /* BrowsTableViewCell.swift */; };
@@ -38,6 +40,7 @@
 		30DBCF8B21F820AB00332723 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBCF8A21F820AB00332723 /* PageViewController.swift */; };
 		30F83F6021FEE74B00593A68 /* NearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F83F5F21FEE74B00593A68 /* NearVC.swift */; };
 		30F9076E2213B9FB00F21AC0 /* PostMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9076D2213B9FB00F21AC0 /* PostMethod.swift */; };
+		30F9077A2214216D00F21AC0 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F907792214216D00F21AC0 /* SearchVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,8 @@
 		303AB34221FABCA5003032F9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		303AB34521FABCE9003032F9 /* CacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImage.swift; sourceTree = "<group>"; };
 		303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		304225C0221A4C0B004B3D9E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		304225C2221A4C27004B3D9E /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 		30A4283D2211179B0005E26C /* ResponseSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSample.swift; sourceTree = "<group>"; };
 		30A428412211718A0005E26C /* BrowsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsVC.swift; sourceTree = "<group>"; };
 		30A428452211776C0005E26C /* BrowsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsTableViewCell.swift; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 		30DBCF8A21F820AB00332723 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		30F83F5F21FEE74B00593A68 /* NearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearVC.swift; sourceTree = "<group>"; };
 		30F9076D2213B9FB00F21AC0 /* PostMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMethod.swift; sourceTree = "<group>"; };
+		30F907792214216D00F21AC0 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,12 +176,11 @@
 			isa = PBXGroup;
 			children = (
 				302AA95521E8502C004580BD /* AppDelegate.swift */,
-				303194CE2212B18800894C1C /* URLString.swift */,
-				30DA9E9521F7FAA400BFF639 /* TabBarVC.swift */,
 				302AA95921E8502C004580BD /* Main.storyboard */,
 				302AA95C21E8502E004580BD /* Assets.xcassets */,
 				302AA95E21E8502E004580BD /* LaunchScreen.storyboard */,
 				302AA96121E8502E004580BD /* Info.plist */,
+				30F907742213C5B300F21AC0 /* URLString */,
 				30F9076F2213BA1D00F21AC0 /* MyPgae */,
 				30F907712213C16C00F21AC0 /* Generic Method */,
 				30A42844221176E10005E26C /* Brows */,
@@ -185,6 +190,7 @@
 				301ECB7C21F6D56200454F27 /* NewsAPI */,
 				303AB34421FABCCF003032F9 /* Cache Image */,
 				30DBCF8721F80D1000332723 /* HTMLToAttributedString */,
+				30F907732213C59000F21AC0 /* TabBar */,
 				30A4283C2211177E0005E26C /* Post API */,
 			);
 			path = CreateApp;
@@ -238,6 +244,9 @@
 				30A42847221178BE0005E26C /* BrowsAPI.swift */,
 				30A428412211718A0005E26C /* BrowsVC.swift */,
 				30A428452211776C0005E26C /* BrowsTableViewCell.swift */,
+				304225C0221A4C0B004B3D9E /* SearchTableViewCell.swift */,
+				30F907792214216D00F21AC0 /* SearchVC.swift */,
+				304225C2221A4C27004B3D9E /* SearchAPI.swift */,
 			);
 			path = Brows;
 			sourceTree = "<group>";
@@ -284,6 +293,22 @@
 				303194D02212D64500894C1C /* GetMethod.swift */,
 			);
 			path = "Generic Method";
+			sourceTree = "<group>";
+		};
+		30F907732213C59000F21AC0 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				30DA9E9521F7FAA400BFF639 /* TabBarVC.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		30F907742213C5B300F21AC0 /* URLString */ = {
+			isa = PBXGroup;
+			children = (
+				303194CE2212B18800894C1C /* URLString.swift */,
+			);
+			path = URLString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,7 +445,9 @@
 				30F9076E2213B9FB00F21AC0 /* PostMethod.swift in Sources */,
 				302AA95821E8502C004580BD /* LoginVC.swift in Sources */,
 				303AB34321FABCA5003032F9 /* CustomButton.swift in Sources */,
+				30F9077A2214216D00F21AC0 /* SearchVC.swift in Sources */,
 				301ECB8421F6D59700454F27 /* NewsTableViewCell.swift in Sources */,
+				304225C3221A4C27004B3D9E /* SearchAPI.swift in Sources */,
 				301ECB8A21F6D5E200454F27 /* HTMLToAttributedString.swift in Sources */,
 				303194D12212D64500894C1C /* GetMethod.swift in Sources */,
 				302AA98421E8521F004580BD /* CreateVC.swift in Sources */,
@@ -429,6 +456,7 @@
 				301ECB9D21F6D95300454F27 /* PopularVC.swift in Sources */,
 				301ECB9221F6D5FF00454F27 /* PopularTableViewCell.swift in Sources */,
 				30DBCF8B21F820AB00332723 /* PageViewController.swift in Sources */,
+				304225C1221A4C0B004B3D9E /* SearchTableViewCell.swift in Sources */,
 				303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */,
 				302AA95621E8502C004580BD /* AppDelegate.swift in Sources */,
 				303194CF2212B18800894C1C /* URLString.swift in Sources */,

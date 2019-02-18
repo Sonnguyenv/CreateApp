@@ -2,8 +2,8 @@
 import UIKit
 
 class PopularVC: UIViewController {
-    
-    var categoryID = ID
+    var index = 0
+    var categoryID = 0
     var eventsArray  = [EventsPopular]()
     
     @IBOutlet weak var myTableView: UITableView!
@@ -11,11 +11,21 @@ class PopularVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Generic Get Method
-        getGenericData(urlString: URLString.urlPopular) { (json: PopularAPI) in
+        if index == 0 {
+            getGenericData(urlString: URLString.urlPopular) { (json: PopularAPI) in
+                guard let events = json.response?.events else { return }
+                DispatchQueue.main.async {
+                    self.eventsArray = events
+                    self.myTableView.reloadData()
+                }
+            }
+        } else {
+            getGenericData(urlString: URLString.urlListEventsByCategory + "?pageIndex=1&pageSize=10&&category_id=\(categoryID)") { (json: PopularAPI) in
             guard let events = json.response?.events else { return }
             DispatchQueue.main.async {
                 self.eventsArray = events
                 self.myTableView.reloadData()
+                }
             }
         }
     }

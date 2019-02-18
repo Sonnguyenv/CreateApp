@@ -8,8 +8,6 @@
 
 import Foundation
 
-//var parameters = [String: String?]()
-
 func postGenericData<T: Decodable> (urlString: String, parameters:[String: String?], completion: @escaping (T) -> ()) {
     guard let url = URL(string: urlString) else { return }
     var request = URLRequest(url: url)
