@@ -4,8 +4,8 @@ import UIKit
 class PopularTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLablePopular: UILabel!
     @IBOutlet weak var imgPopular: UIImageView!
-    @IBOutlet weak var nameLable: UILabel!
-    @IBOutlet weak var descriptionLable: UILabel!
+    @IBOutlet weak var descriptionRaw: UILabel!
+    @IBOutlet weak var startDateLable: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

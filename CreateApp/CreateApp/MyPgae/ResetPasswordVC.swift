@@ -12,9 +12,10 @@ class ResetPasswordVC: UIViewController {
         resetView.layer.borderWidth = 5
         resetView.layer.cornerRadius = 10
     }
+    
     @IBAction func resetPassword(_ sender: UIButton) {
         sender.flash()
-//        POST Generic ResetPassWord
+        //        MARK: POST Generic ResetPassWord
         postGenericData(urlString: URLString.urlRegister, parameters: ["email": textResetPassword.text]) { (json: ResponseSample) in
             print(json.status)
         }

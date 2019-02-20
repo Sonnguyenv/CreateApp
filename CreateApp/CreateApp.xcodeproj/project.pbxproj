@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300802EE221D036400459303 /* MyEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300802ED221D036400459303 /* MyEventsVC.swift */; };
 		301ECB8221F6D59700454F27 /* MainNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB7E21F6D59700454F27 /* MainNews.swift */; };
 		301ECB8321F6D59700454F27 /* InforNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB7F21F6D59700454F27 /* InforNewsVC.swift */; };
 		301ECB8421F6D59700454F27 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB8021F6D59700454F27 /* NewsTableViewCell.swift */; };
@@ -30,7 +31,10 @@
 		303AB34621FABCE9003032F9 /* CacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34521FABCE9003032F9 /* CacheImage.swift */; };
 		303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */; };
 		304225C1221A4C0B004B3D9E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304225C0221A4C0B004B3D9E /* SearchTableViewCell.swift */; };
-		304225C3221A4C27004B3D9E /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304225C2221A4C27004B3D9E /* SearchAPI.swift */; };
+		3079DEAE221BF5DF002252A4 /* KeyChainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079DEAD221BF5DF002252A4 /* KeyChainSwift.swift */; };
+		307FD997221D451000FAE0DC /* EventsFollowedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD996221D451000FAE0DC /* EventsFollowedVC.swift */; };
+		307FD999221D453B00FAE0DC /* ListEventGoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD998221D453B00FAE0DC /* ListEventGoneVC.swift */; };
+		307FD99B221D454B00FAE0DC /* ListEventWillGoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD99A221D454B00FAE0DC /* ListEventWillGoVC.swift */; };
 		30A4283E2211179B0005E26C /* ResponseSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A4283D2211179B0005E26C /* ResponseSample.swift */; };
 		30A428422211718A0005E26C /* BrowsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A428412211718A0005E26C /* BrowsVC.swift */; };
 		30A428462211776C0005E26C /* BrowsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A428452211776C0005E26C /* BrowsTableViewCell.swift */; };
@@ -61,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		300802ED221D036400459303 /* MyEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsVC.swift; sourceTree = "<group>"; };
 		301ECB7E21F6D59700454F27 /* MainNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNews.swift; sourceTree = "<group>"; };
 		301ECB7F21F6D59700454F27 /* InforNewsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InforNewsVC.swift; sourceTree = "<group>"; };
 		301ECB8021F6D59700454F27 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -90,7 +95,10 @@
 		303AB34521FABCE9003032F9 /* CacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImage.swift; sourceTree = "<group>"; };
 		303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		304225C0221A4C0B004B3D9E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
-		304225C2221A4C27004B3D9E /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
+		3079DEAD221BF5DF002252A4 /* KeyChainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainSwift.swift; sourceTree = SOURCE_ROOT; };
+		307FD996221D451000FAE0DC /* EventsFollowedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsFollowedVC.swift; sourceTree = "<group>"; };
+		307FD998221D453B00FAE0DC /* ListEventGoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventGoneVC.swift; sourceTree = "<group>"; };
+		307FD99A221D454B00FAE0DC /* ListEventWillGoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventWillGoVC.swift; sourceTree = "<group>"; };
 		30A4283D2211179B0005E26C /* ResponseSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSample.swift; sourceTree = "<group>"; };
 		30A428412211718A0005E26C /* BrowsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsVC.swift; sourceTree = "<group>"; };
 		30A428452211776C0005E26C /* BrowsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsTableViewCell.swift; sourceTree = "<group>"; };
@@ -175,6 +183,7 @@
 		302AA95421E8502C004580BD /* CreateApp */ = {
 			isa = PBXGroup;
 			children = (
+				3079DEAD221BF5DF002252A4 /* KeyChainSwift.swift */,
 				302AA95521E8502C004580BD /* AppDelegate.swift */,
 				302AA95921E8502C004580BD /* Main.storyboard */,
 				302AA95C21E8502E004580BD /* Assets.xcassets */,
@@ -244,9 +253,8 @@
 				30A42847221178BE0005E26C /* BrowsAPI.swift */,
 				30A428412211718A0005E26C /* BrowsVC.swift */,
 				30A428452211776C0005E26C /* BrowsTableViewCell.swift */,
-				304225C0221A4C0B004B3D9E /* SearchTableViewCell.swift */,
 				30F907792214216D00F21AC0 /* SearchVC.swift */,
-				304225C2221A4C27004B3D9E /* SearchAPI.swift */,
+				304225C0221A4C0B004B3D9E /* SearchTableViewCell.swift */,
 			);
 			path = Brows;
 			sourceTree = "<group>";
@@ -282,6 +290,10 @@
 				302AA95721E8502C004580BD /* LoginVC.swift */,
 				302AA98321E8521F004580BD /* CreateVC.swift */,
 				303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */,
+				300802ED221D036400459303 /* MyEventsVC.swift */,
+				307FD996221D451000FAE0DC /* EventsFollowedVC.swift */,
+				307FD998221D453B00FAE0DC /* ListEventGoneVC.swift */,
+				307FD99A221D454B00FAE0DC /* ListEventWillGoVC.swift */,
 			);
 			path = MyPgae;
 			sourceTree = "<group>";
@@ -444,10 +456,10 @@
 			files = (
 				30F9076E2213B9FB00F21AC0 /* PostMethod.swift in Sources */,
 				302AA95821E8502C004580BD /* LoginVC.swift in Sources */,
+				300802EE221D036400459303 /* MyEventsVC.swift in Sources */,
 				303AB34321FABCA5003032F9 /* CustomButton.swift in Sources */,
 				30F9077A2214216D00F21AC0 /* SearchVC.swift in Sources */,
 				301ECB8421F6D59700454F27 /* NewsTableViewCell.swift in Sources */,
-				304225C3221A4C27004B3D9E /* SearchAPI.swift in Sources */,
 				301ECB8A21F6D5E200454F27 /* HTMLToAttributedString.swift in Sources */,
 				303194D12212D64500894C1C /* GetMethod.swift in Sources */,
 				302AA98421E8521F004580BD /* CreateVC.swift in Sources */,
@@ -458,10 +470,12 @@
 				30DBCF8B21F820AB00332723 /* PageViewController.swift in Sources */,
 				304225C1221A4C0B004B3D9E /* SearchTableViewCell.swift in Sources */,
 				303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */,
+				307FD999221D453B00FAE0DC /* ListEventGoneVC.swift in Sources */,
 				302AA95621E8502C004580BD /* AppDelegate.swift in Sources */,
 				303194CF2212B18800894C1C /* URLString.swift in Sources */,
 				301ECB9321F6D5FF00454F27 /* MainPopular.swift in Sources */,
 				30F83F6021FEE74B00593A68 /* NearVC.swift in Sources */,
+				307FD997221D451000FAE0DC /* EventsFollowedVC.swift in Sources */,
 				30A4283E2211179B0005E26C /* ResponseSample.swift in Sources */,
 				301ECB8321F6D59700454F27 /* InforNewsVC.swift in Sources */,
 				30A428422211718A0005E26C /* BrowsVC.swift in Sources */,
@@ -469,8 +483,10 @@
 				301ECB9921F6D8DE00454F27 /* NewsVC.swift in Sources */,
 				30DA9E9621F7FAA400BFF639 /* TabBarVC.swift in Sources */,
 				30A42848221178BE0005E26C /* BrowsAPI.swift in Sources */,
+				307FD99B221D454B00FAE0DC /* ListEventWillGoVC.swift in Sources */,
 				303AB34621FABCE9003032F9 /* CacheImage.swift in Sources */,
 				301ECB9521F6D5FF00454F27 /* InforPopularVC.swift in Sources */,
+				3079DEAE221BF5DF002252A4 /* KeyChainSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

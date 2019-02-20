@@ -53,18 +53,3 @@ extension BrowsVC: UITableViewDelegate {
     }
 }
 
-extension BrowsVC: UISearchBarDelegate {
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let scrren = storyboard.instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
-        present(scrren, animated: true, completion: nil)
-//        navigationController?.pushViewController(scrren, animated: true)
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.endEditing(true)
-    }
-
-}
-

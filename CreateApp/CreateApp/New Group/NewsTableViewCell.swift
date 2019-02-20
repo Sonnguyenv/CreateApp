@@ -5,7 +5,7 @@ import UIKit
 class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var imgeNews: UIImageView!
     @IBOutlet weak var titleLableNews: UILabel!
-    @IBOutlet weak var dateLableNews: UILabel!
+    @IBOutlet weak var authorLable: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -1,13 +1,7 @@
 
 import UIKit
 
-protocol ColorDelegate: class {
-    func changeButtonColor(_ number: Int)
-}
-
 class PageViewController: UIPageViewController {
-    
-    weak var delegateButton: ColorDelegate?
     
     lazy var subViewControllers: [UIViewController] = {
         return [
@@ -34,10 +28,8 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         switch index {
         case 0:
             setViewControllers([subViewControllers[0]], direction: .reverse, animated: true, completion: nil)
-            delegateButton?.changeButtonColor(0)
         default:
             setViewControllers([subViewControllers[1]], direction: .forward, animated: true, completion: nil)
-            delegateButton?.changeButtonColor(1)
         }
     }
     

@@ -8,7 +8,7 @@ class NewsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Generic Get Method
+        // MARK: Generic Get Method
         getGenericData(urlString: URLString.urlNews) {(json: NewsAPI) in
             guard let news = json.response?.news else { return }
             DispatchQueue.main.async {
@@ -28,8 +28,9 @@ extension NewsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell
         cell.titleLableNews.text = newsArray[indexPath.row].title
-        cell.dateLableNews.text = newsArray[indexPath.row].publish_date
-        // Cache Image
+        cell.authorLable.text = newsArray[indexPath.row].author
+        
+        // MARK: Cache Image
         let urlImageArray = newsArray[indexPath.row].thumb_img
         cell.imgeNews.cacheImage(urlString: urlImageArray ?? "")
         return cell
@@ -37,10 +38,7 @@ extension NewsVC: UITableViewDataSource {
 }
 
 extension NewsVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
-    }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let screen = storyboard.instantiateViewController(withIdentifier: "InforNews") as! InforNewsVC

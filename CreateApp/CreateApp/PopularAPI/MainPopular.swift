@@ -15,6 +15,7 @@ struct ResponsePopular: Decodable {
 struct EventsPopular: Decodable {
     let id: Int
     let status: Int
+    let link: String?
     let photo: String?
     let name: String?
     let description_raw: String?
@@ -26,6 +27,7 @@ struct EventsPopular: Decodable {
     let going_count: Int
     let went_count: Int
     let venue: VenuePopular?
+    let category: Category?
 }
 
 struct VenuePopular: Decodable {
@@ -33,8 +35,18 @@ struct VenuePopular: Decodable {
     let name: String?
     let type: Int
     let description: String?
+    let contact_phone: String?
+    let contact_address: String?
+    let geo_area: String?
+    let geo_long: String?
+    let geo_lat: String?
 }
-
+struct Category: Decodable {
+    let id: Int
+    let name: String?
+    let slug: String?
+    
+}
 struct UserEvents: Decodable {
     let id: Int
     let event_id: Int

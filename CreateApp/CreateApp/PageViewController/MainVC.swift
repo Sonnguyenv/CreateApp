@@ -7,49 +7,30 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var newsButton: UIButton!
     @IBOutlet weak var popularButton: UIButton!
-    var page: PageViewController?
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    lazy var newsSubview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
+    lazy var popularSubview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopularVC") as! PopularVC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        popularButton.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
-        UIApplication.shared.statusBarView?.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
+        
+        scrollView.contentSize = CGSize(width: view.bounds.width * 2, height: scrollView.bounds.height)
+        addSubview([newsSubview.view, popularSubview.view])
     }
-   
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? PageViewController,
-            segue.identifier == "PageViewController" {
-            self.page = vc
-            vc.delegateButton = self
+    
+    func addSubview(_ subview: [UIView]) {
+        for i in 0..<subview.count {
+            subview[i].frame = CGRect(x: self.view.bounds.width * CGFloat(i), y: 0, width: self.scrollView.bounds.width, height: self.scrollView.bounds.height)
+            scrollView.addSubview(subview[i])
         }
     }
     
-    @IBAction func preNews(_ sender: Any) {
-        page?.moveToPage(0)
-        newsButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        popularButton.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
+    @IBAction func newsButton(_ sender: Any) {
+        
     }
-    
-    @IBAction func buttonReleased(_ sender: Any) {
-        page?.moveToPage(0)
-        newsButton.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
-    }
-    
-    @IBAction func nextPopular(_ sender: Any) {
-        page?.moveToPage(1)
-        popularButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        newsButton.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
-    }
-    
-    @IBAction func popularReleased(_ sender: Any) {
-        page?.moveToPage(1)
-        popularButton.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
+    @IBAction func popularButton(_ sender: Any) {
+        
     }
 }
 
-extension MainVC: ColorDelegate {
-    func changeButtonColor(_ number: Int) {
-        newsButton.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
-        popularButton.backgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1294117647, blue: 0.1843137255, alpha: 1)
-    }
-}

@@ -12,8 +12,8 @@ class SearchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imgeView: UIImageView!
     @IBOutlet weak var lableName: UILabel!
-    @IBOutlet weak var lableNameVenue: UILabel!
-    @IBOutlet weak var lableDescription: UILabel!
+    @IBOutlet weak var startDateLable: UILabel!
+    @IBOutlet weak var descriptionRawLable: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,3 +21,4 @@ class SearchTableViewCell: UITableViewCell {
     }
 
 }
+

@@ -6,12 +6,10 @@ class CreateVC: UIViewController {
     @IBOutlet weak var lableEmail: UILabel!
     @IBOutlet weak var lablePass: UILabel!
     @IBOutlet weak var lableRepass: UILabel!
-    
     @IBOutlet weak var textUser: UITextField!
     @IBOutlet weak var textEmail: UITextField!
     @IBOutlet weak var textPassword: UITextField!
     @IBOutlet weak var textRepassword: UITextField!
-    
     @IBOutlet weak var registerView: UIButton!
     
     var userEmtry = false
@@ -30,6 +28,7 @@ class CreateVC: UIViewController {
         registerView.layer.borderWidth = 5
         registerView.layer.cornerRadius = 10
         textUser.text = usertext
+        
     }
 
     @IBAction func register(_ sender: UIButton) {
@@ -42,7 +41,7 @@ class CreateVC: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     
-        //POST Generic Register
+        //MARK: POST Generic Register
         postGenericData(urlString: URLString.urlRegister, parameters: ["name": textUser.text ,"email": textEmail.text, "password": textPassword.text]) { (json: ResponseSample) in
             print(json.status)
         }

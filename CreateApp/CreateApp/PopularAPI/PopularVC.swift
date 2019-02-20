@@ -2,15 +2,17 @@
 import UIKit
 
 class PopularVC: UIViewController {
+    
     var index = 0
     var categoryID = 0
+    
     var eventsArray  = [EventsPopular]()
     
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Generic Get Method
+        // MARK: Generic Get Method
         if index == 0 {
             getGenericData(urlString: URLString.urlPopular) { (json: PopularAPI) in
                 guard let events = json.response?.events else { return }
@@ -41,9 +43,9 @@ extension PopularVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier:
             "PopularTableViewCell") as! PopularTableViewCell
         cell.nameLablePopular.text = eventsArray[indexPath.row].name
-        cell.nameLable.text = eventsArray[indexPath.row].venue?.name
-        cell.descriptionLable.text = eventsArray[indexPath.row].venue?.description
-        // Cache Image
+        cell.descriptionRaw.text = eventsArray[indexPath.row].description_raw?.htmlToString
+        cell.startDateLable.text = eventsArray[indexPath.row].schedule_start_date
+        //MARK: Cache Image
         let urlImageArray = eventsArray[indexPath.row].photo
         cell.imgPopular.cacheImage(urlString: urlImageArray ?? "")
         return cell
@@ -51,10 +53,7 @@ extension PopularVC: UITableViewDataSource {
 }
 
 extension PopularVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
-    
+   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let screen = storyboard.instantiateViewController(withIdentifier: "InforPopular") as! InforPopularVC
@@ -64,6 +63,9 @@ extension PopularVC: UITableViewDelegate {
         screen.textEndTime = eventsArray[indexPath.row].schedule_end_time ?? ""
         screen.textStartDate = eventsArray[indexPath.row].schedule_start_date ?? ""
         screen.textEndDate = eventsArray[indexPath.row].schedule_end_date ?? ""
+        screen.venueId = (eventsArray[indexPath.row].venue?.id)!
+        screen.status = eventsArray[indexPath.row].status
+        screen.eventId = eventsArray[indexPath.row].id
         navigationController?.pushViewController(screen, animated: true)
     }
 }
