@@ -1,5 +1,5 @@
 //
-//  ListEventWillGoVC.swift
+//  ListEventGoneVC.swift
 //  CreateApp
 //
 //  Created by Sonnv on 2/20/19.
@@ -8,12 +8,10 @@
 
 import UIKit
 
-class ListEventWillGoVC: UIViewController {
+class WentVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
-
 }

@@ -7,9 +7,8 @@
 //
 
 import Foundation
-var ID = 0
 struct URLString {
-    static let urlBase = "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/"
+    static let urlBase = "http://172.16.18.81/18175d1_mobile_100_fresher/public/api/v0/"
     static let urlNews = urlBase + "listNews"
     static let urlPopular = urlBase + "listPopularEvents"
     static let urlGetDetailEvent = urlBase + "getDetailEvent"

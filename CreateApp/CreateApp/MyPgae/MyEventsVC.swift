@@ -11,16 +11,14 @@ import UIKit
 class MyEventsVC: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
-    lazy var eventFollow = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EventsFollowedVC") as! EventsFollowedVC
-    lazy var listEventWillGo = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListEventWillGoVC") as! ListEventWillGoVC
-    lazy var listEventGone = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListEventGoneVC") as! ListEventGoneVC
+    lazy var listGoing = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListEventWillGoVC") as! GoingVC
+    lazy var listWent = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListEventGoneVC") as! WentVC
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.contentSize = CGSize(width: view.bounds.width * 3, height: scrollView.bounds.height)
-        addSubview([eventFollow.view, listEventWillGo.view, listEventGone.view])
+        scrollView.contentSize = CGSize(width: view.bounds.width * 2, height: scrollView.bounds.height)
+        addSubview([listGoing.view, listWent.view])
     }
     
     func addSubview(_ subview: [UIView]) {

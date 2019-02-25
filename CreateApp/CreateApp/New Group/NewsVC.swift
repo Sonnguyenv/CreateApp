@@ -9,6 +9,8 @@ class NewsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: Generic Get Method
+        let nib = UINib.init(nibName: "TableViewCell", bundle: nil)
+        myTable.register(nib, forCellReuseIdentifier: "TableViewCell")
         getGenericData(urlString: URLString.urlNews) {(json: NewsAPI) in
             guard let news = json.response?.news else { return }
             DispatchQueue.main.async {
@@ -26,13 +28,13 @@ extension NewsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell
-        cell.titleLableNews.text = newsArray[indexPath.row].title
-        cell.authorLable.text = newsArray[indexPath.row].author
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
+        cell.titleLable.text = newsArray[indexPath.row].title
+        cell.descriptionLable.text = newsArray[indexPath.row].author
         
         // MARK: Cache Image
         let urlImageArray = newsArray[indexPath.row].thumb_img
-        cell.imgeNews.cacheImage(urlString: urlImageArray ?? "")
+        cell.imagView.cacheImage(urlString: urlImageArray ?? "")
         return cell
     }
 }

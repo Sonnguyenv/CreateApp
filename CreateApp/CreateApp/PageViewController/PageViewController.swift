@@ -3,6 +3,8 @@ import UIKit
 
 class PageViewController: UIPageViewController {
     
+    weak var delegatColor: DelegateColor?
+    
     lazy var subViewControllers: [UIViewController] = {
         return [
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsVC") as! NewsVC,
@@ -35,6 +37,7 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let currentIndex = subViewControllers.index(of: viewController) ?? 0
+        delegatColor?.colorbutton(index: currentIndex)
         if currentIndex <= 0 {
             return nil
         }
@@ -43,9 +46,15 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let currentIndex = subViewControllers.index(of: viewController) ?? 0
+        delegatColor?.colorbutton(index: currentIndex)
         if currentIndex >= subViewControllers.count-1 {
             return nil
         }
         return subViewControllers[currentIndex+1]
     }
 }
+
+protocol DelegateColor: class {
+    func colorbutton(index: Int)
+}
+

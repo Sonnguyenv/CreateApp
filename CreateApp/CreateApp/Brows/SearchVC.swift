@@ -50,12 +50,12 @@ extension SearchVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let screen = storyboard.instantiateViewController(withIdentifier: "InforPopular") as! InforPopularVC
-        screen.textRaw = searchArray[indexPath.row].description_raw ?? ""
-        screen.textHTML = searchArray[indexPath.row].description_html ?? ""
-        screen.textStartTime = searchArray[indexPath.row].schedule_start_time ?? ""
-        screen.textEndTime = searchArray[indexPath.row].schedule_end_time ?? ""
+        screen.textName = searchArray[indexPath.row].name ?? ""
+        screen.textNameVenue = searchArray[indexPath.row].venue?.name ?? ""
         screen.textStartDate = searchArray[indexPath.row].schedule_start_date ?? ""
-        screen.textEndDate = searchArray[indexPath.row].schedule_end_date ?? ""
+        screen.textDescriptionRaw = searchArray[indexPath.row].description_raw ?? ""
+        let urlImageArray = searchArray[indexPath.row].photo
+        screen.urlPhotoString = urlImageArray ?? ""
         navigationController?.pushViewController(screen, animated: true)
     }
 }

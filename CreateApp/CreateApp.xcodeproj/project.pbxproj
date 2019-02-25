@@ -10,9 +10,7 @@
 		300802EE221D036400459303 /* MyEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300802ED221D036400459303 /* MyEventsVC.swift */; };
 		301ECB8221F6D59700454F27 /* MainNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB7E21F6D59700454F27 /* MainNews.swift */; };
 		301ECB8321F6D59700454F27 /* InforNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB7F21F6D59700454F27 /* InforNewsVC.swift */; };
-		301ECB8421F6D59700454F27 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB8021F6D59700454F27 /* NewsTableViewCell.swift */; };
 		301ECB8A21F6D5E200454F27 /* HTMLToAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB8721F6D5E200454F27 /* HTMLToAttributedString.swift */; };
-		301ECB9221F6D5FF00454F27 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB8D21F6D5FF00454F27 /* PopularTableViewCell.swift */; };
 		301ECB9321F6D5FF00454F27 /* MainPopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB8E21F6D5FF00454F27 /* MainPopular.swift */; };
 		301ECB9521F6D5FF00454F27 /* InforPopularVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB9021F6D5FF00454F27 /* InforPopularVC.swift */; };
 		301ECB9921F6D8DE00454F27 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301ECB9821F6D8DE00454F27 /* NewsVC.swift */; };
@@ -25,6 +23,9 @@
 		302AA96B21E8502E004580BD /* CreateAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AA96A21E8502E004580BD /* CreateAppTests.swift */; };
 		302AA97621E8502E004580BD /* CreateAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AA97521E8502E004580BD /* CreateAppUITests.swift */; };
 		302AA98421E8521F004580BD /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AA98321E8521F004580BD /* CreateVC.swift */; };
+		302B27122223C6A9009C4812 /* InforPopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302B27112223C6A9009C4812 /* InforPopularCollectionViewCell.swift */; };
+		302B27152223E604009C4812 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302B27132223E604009C4812 /* TableViewCell.swift */; };
+		302B27162223E604009C4812 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302B27142223E604009C4812 /* TableViewCell.xib */; };
 		303194CF2212B18800894C1C /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303194CE2212B18800894C1C /* URLString.swift */; };
 		303194D12212D64500894C1C /* GetMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303194D02212D64500894C1C /* GetMethod.swift */; };
 		303AB34321FABCA5003032F9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34221FABCA5003032F9 /* CustomButton.swift */; };
@@ -32,9 +33,8 @@
 		303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */; };
 		304225C1221A4C0B004B3D9E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304225C0221A4C0B004B3D9E /* SearchTableViewCell.swift */; };
 		3079DEAE221BF5DF002252A4 /* KeyChainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079DEAD221BF5DF002252A4 /* KeyChainSwift.swift */; };
-		307FD997221D451000FAE0DC /* EventsFollowedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD996221D451000FAE0DC /* EventsFollowedVC.swift */; };
-		307FD999221D453B00FAE0DC /* ListEventGoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD998221D453B00FAE0DC /* ListEventGoneVC.swift */; };
-		307FD99B221D454B00FAE0DC /* ListEventWillGoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD99A221D454B00FAE0DC /* ListEventWillGoVC.swift */; };
+		307FD999221D453B00FAE0DC /* WentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD998221D453B00FAE0DC /* WentVC.swift */; };
+		307FD99B221D454B00FAE0DC /* GoingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD99A221D454B00FAE0DC /* GoingVC.swift */; };
 		30A4283E2211179B0005E26C /* ResponseSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A4283D2211179B0005E26C /* ResponseSample.swift */; };
 		30A428422211718A0005E26C /* BrowsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A428412211718A0005E26C /* BrowsVC.swift */; };
 		30A428462211776C0005E26C /* BrowsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A428452211776C0005E26C /* BrowsTableViewCell.swift */; };
@@ -68,9 +68,7 @@
 		300802ED221D036400459303 /* MyEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsVC.swift; sourceTree = "<group>"; };
 		301ECB7E21F6D59700454F27 /* MainNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNews.swift; sourceTree = "<group>"; };
 		301ECB7F21F6D59700454F27 /* InforNewsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InforNewsVC.swift; sourceTree = "<group>"; };
-		301ECB8021F6D59700454F27 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		301ECB8721F6D5E200454F27 /* HTMLToAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLToAttributedString.swift; sourceTree = "<group>"; };
-		301ECB8D21F6D5FF00454F27 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
 		301ECB8E21F6D5FF00454F27 /* MainPopular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPopular.swift; sourceTree = "<group>"; };
 		301ECB9021F6D5FF00454F27 /* InforPopularVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InforPopularVC.swift; sourceTree = "<group>"; };
 		301ECB9821F6D8DE00454F27 /* NewsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
@@ -89,6 +87,9 @@
 		302AA97521E8502E004580BD /* CreateAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppUITests.swift; sourceTree = "<group>"; };
 		302AA97721E8502E004580BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		302AA98321E8521F004580BD /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
+		302B27112223C6A9009C4812 /* InforPopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InforPopularCollectionViewCell.swift; sourceTree = "<group>"; };
+		302B27132223E604009C4812 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		302B27142223E604009C4812 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		303194CE2212B18800894C1C /* URLString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
 		303194D02212D64500894C1C /* GetMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMethod.swift; sourceTree = "<group>"; };
 		303AB34221FABCA5003032F9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -96,9 +97,8 @@
 		303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		304225C0221A4C0B004B3D9E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		3079DEAD221BF5DF002252A4 /* KeyChainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainSwift.swift; sourceTree = SOURCE_ROOT; };
-		307FD996221D451000FAE0DC /* EventsFollowedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsFollowedVC.swift; sourceTree = "<group>"; };
-		307FD998221D453B00FAE0DC /* ListEventGoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventGoneVC.swift; sourceTree = "<group>"; };
-		307FD99A221D454B00FAE0DC /* ListEventWillGoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventWillGoVC.swift; sourceTree = "<group>"; };
+		307FD998221D453B00FAE0DC /* WentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WentVC.swift; sourceTree = "<group>"; };
+		307FD99A221D454B00FAE0DC /* GoingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoingVC.swift; sourceTree = "<group>"; };
 		30A4283D2211179B0005E26C /* ResponseSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSample.swift; sourceTree = "<group>"; };
 		30A428412211718A0005E26C /* BrowsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsVC.swift; sourceTree = "<group>"; };
 		30A428452211776C0005E26C /* BrowsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,7 +141,6 @@
 			children = (
 				301ECB7E21F6D59700454F27 /* MainNews.swift */,
 				301ECB9821F6D8DE00454F27 /* NewsVC.swift */,
-				301ECB8021F6D59700454F27 /* NewsTableViewCell.swift */,
 				301ECB7F21F6D59700454F27 /* InforNewsVC.swift */,
 			);
 			name = NewsAPI;
@@ -153,8 +152,8 @@
 			children = (
 				301ECB8E21F6D5FF00454F27 /* MainPopular.swift */,
 				301ECB9C21F6D95300454F27 /* PopularVC.swift */,
-				301ECB8D21F6D5FF00454F27 /* PopularTableViewCell.swift */,
 				301ECB9021F6D5FF00454F27 /* InforPopularVC.swift */,
+				302B27112223C6A9009C4812 /* InforPopularCollectionViewCell.swift */,
 			);
 			path = PopularAPI;
 			sourceTree = "<group>";
@@ -185,6 +184,8 @@
 			children = (
 				3079DEAD221BF5DF002252A4 /* KeyChainSwift.swift */,
 				302AA95521E8502C004580BD /* AppDelegate.swift */,
+				302B27132223E604009C4812 /* TableViewCell.swift */,
+				302B27142223E604009C4812 /* TableViewCell.xib */,
 				302AA95921E8502C004580BD /* Main.storyboard */,
 				302AA95C21E8502E004580BD /* Assets.xcassets */,
 				302AA95E21E8502E004580BD /* LaunchScreen.storyboard */,
@@ -291,9 +292,8 @@
 				302AA98321E8521F004580BD /* CreateVC.swift */,
 				303AB34721FB0B63003032F9 /* ResetPasswordVC.swift */,
 				300802ED221D036400459303 /* MyEventsVC.swift */,
-				307FD996221D451000FAE0DC /* EventsFollowedVC.swift */,
-				307FD998221D453B00FAE0DC /* ListEventGoneVC.swift */,
-				307FD99A221D454B00FAE0DC /* ListEventWillGoVC.swift */,
+				307FD99A221D454B00FAE0DC /* GoingVC.swift */,
+				307FD998221D453B00FAE0DC /* WentVC.swift */,
 			);
 			path = MyPgae;
 			sourceTree = "<group>";
@@ -428,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				302AA96021E8502E004580BD /* LaunchScreen.storyboard in Resources */,
+				302B27162223E604009C4812 /* TableViewCell.xib in Resources */,
 				302AA95D21E8502E004580BD /* Assets.xcassets in Resources */,
 				302AA95B21E8502C004580BD /* Main.storyboard in Resources */,
 			);
@@ -457,25 +458,24 @@
 				30F9076E2213B9FB00F21AC0 /* PostMethod.swift in Sources */,
 				302AA95821E8502C004580BD /* LoginVC.swift in Sources */,
 				300802EE221D036400459303 /* MyEventsVC.swift in Sources */,
+				302B27122223C6A9009C4812 /* InforPopularCollectionViewCell.swift in Sources */,
 				303AB34321FABCA5003032F9 /* CustomButton.swift in Sources */,
+				302B27152223E604009C4812 /* TableViewCell.swift in Sources */,
 				30F9077A2214216D00F21AC0 /* SearchVC.swift in Sources */,
-				301ECB8421F6D59700454F27 /* NewsTableViewCell.swift in Sources */,
 				301ECB8A21F6D5E200454F27 /* HTMLToAttributedString.swift in Sources */,
 				303194D12212D64500894C1C /* GetMethod.swift in Sources */,
 				302AA98421E8521F004580BD /* CreateVC.swift in Sources */,
 				30A428462211776C0005E26C /* BrowsTableViewCell.swift in Sources */,
 				30DBCF8921F81D9400332723 /* MainVC.swift in Sources */,
 				301ECB9D21F6D95300454F27 /* PopularVC.swift in Sources */,
-				301ECB9221F6D5FF00454F27 /* PopularTableViewCell.swift in Sources */,
 				30DBCF8B21F820AB00332723 /* PageViewController.swift in Sources */,
 				304225C1221A4C0B004B3D9E /* SearchTableViewCell.swift in Sources */,
 				303AB34821FB0B63003032F9 /* ResetPasswordVC.swift in Sources */,
-				307FD999221D453B00FAE0DC /* ListEventGoneVC.swift in Sources */,
+				307FD999221D453B00FAE0DC /* WentVC.swift in Sources */,
 				302AA95621E8502C004580BD /* AppDelegate.swift in Sources */,
 				303194CF2212B18800894C1C /* URLString.swift in Sources */,
 				301ECB9321F6D5FF00454F27 /* MainPopular.swift in Sources */,
 				30F83F6021FEE74B00593A68 /* NearVC.swift in Sources */,
-				307FD997221D451000FAE0DC /* EventsFollowedVC.swift in Sources */,
 				30A4283E2211179B0005E26C /* ResponseSample.swift in Sources */,
 				301ECB8321F6D59700454F27 /* InforNewsVC.swift in Sources */,
 				30A428422211718A0005E26C /* BrowsVC.swift in Sources */,
@@ -483,7 +483,7 @@
 				301ECB9921F6D8DE00454F27 /* NewsVC.swift in Sources */,
 				30DA9E9621F7FAA400BFF639 /* TabBarVC.swift in Sources */,
 				30A42848221178BE0005E26C /* BrowsAPI.swift in Sources */,
-				307FD99B221D454B00FAE0DC /* ListEventWillGoVC.swift in Sources */,
+				307FD99B221D454B00FAE0DC /* GoingVC.swift in Sources */,
 				303AB34621FABCE9003032F9 /* CacheImage.swift in Sources */,
 				301ECB9521F6D5FF00454F27 /* InforPopularVC.swift in Sources */,
 				3079DEAE221BF5DF002252A4 /* KeyChainSwift.swift in Sources */,
