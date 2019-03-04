@@ -42,11 +42,10 @@ extension NewsVC: UITableViewDataSource {
 extension NewsVC: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let screen = storyboard.instantiateViewController(withIdentifier: "InforNews") as! InforNewsVC
-        screen.inforNew = newsArray[indexPath.row].description ?? ""
-        screen.titleNew = newsArray[indexPath.row].title ?? ""
-        screen.author = newsArray[indexPath.row].author ?? ""
-        navigationController?.pushViewController(screen, animated: true)
+        let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InforNews") as! InforNewsVC
+        scr.inforNew = newsArray[indexPath.row].description ?? ""
+        scr.titleNew = newsArray[indexPath.row].title ?? ""
+        scr.author   = newsArray[indexPath.row].author ?? ""
+        present(scr, animated: true, completion: nil)
     }
 }

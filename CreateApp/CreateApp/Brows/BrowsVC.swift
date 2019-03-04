@@ -8,9 +8,10 @@ class BrowsVC: UIViewController {
     
     @IBOutlet weak var browsTableCell: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         getGenericData(urlString: URLString.urlListCategories + "?pageIndex=1&pageSize=10") { (json: CategoriesAPI) in
             guard let categories = json.response?.categories else { return }
             DispatchQueue.main.async {
@@ -21,9 +22,8 @@ class BrowsVC: UIViewController {
     }
     
     @IBAction func searchButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let screen = storyboard.instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
-        navigationController?.pushViewController(screen, animated: true)
+        let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+        navigationController?.pushViewController(scr, animated: true)
     }
 }
 
@@ -35,6 +35,10 @@ extension BrowsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BrowsTableViewCell") as! BrowsTableViewCell
         cell.nameLable.text = categoriesArray[indexPath.row].name
+        
+        cell.layer.cornerRadius = 3
+        cell.layer.borderWidth  = 1
+        cell.layer.borderColor  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         return cell
     }
 }
@@ -45,11 +49,9 @@ extension BrowsVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let screen = storyboard.instantiateViewController(withIdentifier: "PopularVC") as! PopularVC
-        screen.categoryID = categoriesArray[indexPath.row].id
-        screen.index = 1
-        navigationController?.pushViewController(screen, animated: true)
+        let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopularVC") as! PopularVC
+        scr.categoryID = categoriesArray[indexPath.row].id
+        scr.index      = 1
+        present(scr, animated: true, completion: nil)
     }
 }
-

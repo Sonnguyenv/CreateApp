@@ -7,9 +7,18 @@ struct PopularAPI: Decodable {
     let response: ResponsePopular?
 }
 
+struct PopularDetail: Decodable {
+    let status: Int
+    let response: ResponseEvents?
+}
+
+
 struct ResponsePopular: Decodable {
     let events: [EventsPopular]?
-    let user_events: [UserEvents]?
+}
+
+struct ResponseEvents: Decodable {
+    let events: EventsPopular?
 }
 
 struct EventsPopular: Decodable {

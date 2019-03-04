@@ -10,12 +10,16 @@ class InforNewsVC: UIViewController {
     
     var titleNew = String()
     var inforNew = String()
-    var author = String()
+    var author   = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleNews.text = titleNew
-        inforLable.text = inforNew
+        titleNews.text   = titleNew
+        inforLable.text  = inforNew
         authorLable.text = author
     }
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
