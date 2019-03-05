@@ -30,7 +30,6 @@ class SignUpVC: UIViewController {
         signUpView.layer.borderWidth = 0
         signUpView.layer.cornerRadius = 10
         textUser.text = usertext
-        
         let attributeString = NSMutableAttributedString(string: "Already amember? Login",
                                                         attributes: underLine)
         loginButton.setAttributedTitle(attributeString, for: .normal)
@@ -40,19 +39,21 @@ class SignUpVC: UIViewController {
         sender.shake()
         delegate?.showData(dataUser: textEmail.text ?? "", dataPassword: textPassword.text ?? "")
         postGenericData(urlString: URLString.urlRegister, parameters: ["name": textUser.text ,"email": textEmail.text, "password": textPassword.text]) { (json: ResponseSample) in
-        }
-        if textPassword.text == textPassword.text {
-            repasswordEmtry = true
-        }
-        if userEmtry && emailEmtry && passwordEmtry && repasswordEmtry {
-        }
+            print(json.status)
+//        }
+//        if textPassword.text == textPassword.text {
+//            repasswordEmtry = true
+//        }
+//        if userEmtry && emailEmtry && passwordEmtry && repasswordEmtry {
+//        }
         let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        navigationController?.pushViewController(scr, animated: true)
-//        MARK: POST Generic Register
+        self.navigationController?.pushViewController(scr, animated: true)
+        }
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
         let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        scr.modalTransitionStyle = UIModalTransitionStyle.partialCurl
         navigationController?.pushViewController(scr, animated: true)
     }
 }
@@ -105,3 +106,4 @@ extension SignUpVC: UITextFieldDelegate {
         }
     }
 }
+

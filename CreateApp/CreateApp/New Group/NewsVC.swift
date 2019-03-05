@@ -31,7 +31,6 @@ extension NewsVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         cell.titleLable.text = newsArray[indexPath.row].title
         cell.descriptionLable.text = newsArray[indexPath.row].author
-        
         // MARK: Cache Image
         let urlImageArray = newsArray[indexPath.row].thumb_img
         cell.imagView.cacheImage(urlString: urlImageArray ?? "")

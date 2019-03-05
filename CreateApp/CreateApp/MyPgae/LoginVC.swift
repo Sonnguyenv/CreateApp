@@ -27,8 +27,10 @@ class LoginVC: UIViewController {
         loginView.layer.borderColor  = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         loginView.layer.borderWidth  = 0
         loginView.layer.cornerRadius = 10
-        textEmail.text = "dreamsonss@gmail.com"
-        textPassword.text = "NmpXvfq1"
+//        textEmail.text = "dreamsonss@gmail.com"
+//        textPassword.text = "NmpXvfq1"
+        textEmail.text = "zxcb@gmail.com"
+        textPassword.text = "Daucoma1995"
     }
     
     @IBAction func login(_ sender: UIButton) {
@@ -37,6 +39,7 @@ class LoginVC: UIViewController {
         postGenericData(urlString: URLString.urlLogin, parameters: ["email": textEmail.text, "password": textPassword.text]) { (json: ResponseSample) in
             self.keyChain.set((json.response?.token)!, forKey: "token", withAccess: nil)
             print(json.status)
+            print(self.keyChain.get("token"))
             DispatchQueue.main.async {
                 let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyEventsVC") as! MyEventsVC
                 self.navigationController?.pushViewController(scr, animated: true)

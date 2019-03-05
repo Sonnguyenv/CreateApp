@@ -43,7 +43,7 @@ extension GoingVC: UITableViewDataSource {
         cell.descriptionLable.text = eventsArray[indexPath.row].description_raw?.htmlToString
         cell.startDateLable.text   = eventsArray[indexPath.row].schedule_start_date
         //MARK: Cache Image
-        let urlImageArray = eventsArray[indexPath.row].photo
+        let urlImageArray          = eventsArray[indexPath.row].photo
         cell.imagView.cacheImage(urlString: urlImageArray ?? "")
         return cell
     }
@@ -51,16 +51,16 @@ extension GoingVC: UITableViewDataSource {
 
 extension GoingVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let screen = storyboard.instantiateViewController(withIdentifier: "InforPopular") as! InforPopularVC
-        screen.textName           = eventsArray[indexPath.row].name ?? ""
-        screen.textNameVenue      = eventsArray[indexPath.row].venue?.name ?? ""
-        screen.textStartDate      = eventsArray[indexPath.row].schedule_start_date ?? ""
-        screen.textDescriptionRaw = eventsArray[indexPath.row].description_raw ?? ""
+        let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InforPopularVC") as! InforPopularVC
+        scr.textName           = eventsArray[indexPath.row].name ?? ""
+        scr.textNameVenue      = eventsArray[indexPath.row].venue?.name ?? ""
+        scr.textStartDate      = eventsArray[indexPath.row].schedule_start_date ?? ""
+        scr.textDescriptionRaw = eventsArray[indexPath.row].description_raw ?? ""
+        scr.eventId            = eventsArray[indexPath.row].id
         //MARK: Cache Image
-        let urlImageArray = eventsArray[indexPath.row].photo
-        screen.urlPhotoString   = urlImageArray ?? ""
-        screen.eventsArrayInfor = eventsArray
-        present(screen, animated: true, completion: nil)
+        let urlImageArray    = eventsArray[indexPath.row].photo
+        scr.urlPhotoString   = urlImageArray ?? ""
+        scr.eventsArrayInfor = eventsArray
+        present(scr, animated: true, completion: nil)
     }
 }

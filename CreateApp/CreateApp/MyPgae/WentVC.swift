@@ -25,6 +25,7 @@ class WentVC: UIViewController {
         guard let token = keyChain.get("token") else {return}
         getGenericData(urlString: URLString.urlListMyEvents + "?status=2&token=\(token)") { (json: PopularAPI) in
             guard let events = json.response?.events else {return}
+            print(events)
             DispatchQueue.main.async {
                 self.eventsArray = events
                 self.myTable.reloadData()
@@ -54,7 +55,7 @@ extension WentVC: UITableViewDataSource {
 extension WentVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let screen = storyboard.instantiateViewController(withIdentifier: "InforPopular") as! InforPopularVC
+        let screen = storyboard.instantiateViewController(withIdentifier: "InforPopularVC") as! InforPopularVC
         screen.textName           = eventsArray[indexPath.row].name ?? ""
         screen.textNameVenue      = eventsArray[indexPath.row].venue?.name ?? ""
         screen.textStartDate      = eventsArray[indexPath.row].schedule_start_date ?? ""

@@ -30,6 +30,7 @@ class MyEventsVC: UIViewController {
     @IBAction func goingButton(_ sender: Any) {
         goingButtonView.setTitleColor(#colorLiteral(red: 0.337254902, green: 0.1960784314, blue: 0.6823529412, alpha: 1), for: .normal)
         wentButtonView.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        
     }
     
     @IBAction func wentButton(_ sender: Any) {

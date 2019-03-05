@@ -58,16 +58,15 @@ extension SearchVC: UITableViewDataSource {
 
 extension SearchVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let screen = storyboard.instantiateViewController(withIdentifier: "InforPopularVC") as! InforPopularVC
-        screen.textName           = searchArray[indexPath.row].name ?? ""
-        screen.textNameVenue      = searchArray[indexPath.row].venue?.name ?? ""
-        screen.textStartDate      = searchArray[indexPath.row].schedule_start_date ?? ""
-        screen.textDescriptionRaw = searchArray[indexPath.row].description_raw ?? ""
-        let urlImageArray         = searchArray[indexPath.row].photo
-        screen.urlPhotoString     = urlImageArray ?? ""
-        screen.eventId = searchArray[indexPath.row].id
-        present(screen, animated: true, completion: nil)
+        let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InforPopularVC") as! InforPopularVC
+        scr.textName           = searchArray[indexPath.row].name ?? ""
+        scr.textNameVenue      = searchArray[indexPath.row].venue?.name ?? ""
+        scr.textStartDate      = searchArray[indexPath.row].schedule_start_date ?? ""
+        scr.textDescriptionRaw = searchArray[indexPath.row].description_raw ?? ""
+        let urlImageArray      = searchArray[indexPath.row].photo
+        scr.urlPhotoString     = urlImageArray ?? ""
+        scr.eventId = searchArray[indexPath.row].id
+        present(scr, animated: true, completion: nil)
     }
 }
 

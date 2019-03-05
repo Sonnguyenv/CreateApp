@@ -47,6 +47,7 @@
 		30F83F6021FEE74B00593A68 /* NearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F83F5F21FEE74B00593A68 /* NearVC.swift */; };
 		30F9076E2213B9FB00F21AC0 /* PostMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9076D2213B9FB00F21AC0 /* PostMethod.swift */; };
 		30F9077A2214216D00F21AC0 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F907792214216D00F21AC0 /* SearchVC.swift */; };
+		30FA227F222E5A74000C0FCC /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA227E222E5A74000C0FCC /* CustomPresentAnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		30F83F5F21FEE74B00593A68 /* NearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearVC.swift; sourceTree = "<group>"; };
 		30F9076D2213B9FB00F21AC0 /* PostMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMethod.swift; sourceTree = "<group>"; };
 		30F907792214216D00F21AC0 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		30FA227E222E5A74000C0FCC /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				3079DEAD221BF5DF002252A4 /* KeyChainSwift.swift */,
 				302AA95521E8502C004580BD /* AppDelegate.swift */,
+				30FA227E222E5A74000C0FCC /* CustomPresentAnimationController.swift */,
 				302AA95921E8502C004580BD /* Main.storyboard */,
 				302AA95C21E8502E004580BD /* Assets.xcassets */,
 				302AA95E21E8502E004580BD /* LaunchScreen.storyboard */,
@@ -497,6 +500,7 @@
 				307FD999221D453B00FAE0DC /* WentVC.swift in Sources */,
 				302AA95621E8502C004580BD /* AppDelegate.swift in Sources */,
 				303194CF2212B18800894C1C /* URLString.swift in Sources */,
+				30FA227F222E5A74000C0FCC /* CustomPresentAnimationController.swift in Sources */,
 				301ECB9321F6D5FF00454F27 /* MainPopular.swift in Sources */,
 				30F83F6021FEE74B00593A68 /* NearVC.swift in Sources */,
 				30A4283E2211179B0005E26C /* ResponseSample.swift in Sources */,

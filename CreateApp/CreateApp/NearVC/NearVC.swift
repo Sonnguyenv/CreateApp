@@ -39,11 +39,20 @@ class NearVC: UIViewController {
 
 extension NearVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            long = location.coordinate.longitude
-            lat = location.coordinate.latitude
+        let location = locations[0]
+        long = location.coordinate.longitude
+        lat  = location.coordinate.latitude
+        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+        let myLocation = CLLocationCoordinate2DMake(lat, long)
+        let region = MKCoordinateRegion(center: myLocation, span: span)
+        mapView.setRegion(region, animated: true)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = myLocation
+        annotation.title = "I'm Here"
+        annotation.subtitle = "Toà nhà Sông Đà"
+        self.mapView.addAnnotation(annotation)
+        self.mapView.showsUserLocation = true
             getNearlyEvents()
-        }
     }
 }
 
@@ -88,6 +97,6 @@ extension NearVC: UICollectionViewDelegate {
 
 extension NearVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: collectionView.frame.height)
+        return CGSize(width: 354, height: collectionView.frame.height)
     }
 }

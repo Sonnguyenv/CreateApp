@@ -98,7 +98,8 @@ class InforPopularVC: UIViewController {
     }
     
     func doUpdateVeneu() {
-        postGenericData(urlString: URLString.urlDoFollowVenue, parameters: ["token": keyChain.get("token"), "status": "\(status)", "event_id": "\(eventId)"]) { (json: PopularAPI) in
+        postGenericData(urlString: URLString.urlDoUpdateEvent, parameters: ["token": keyChain.get("token"), "status": "\(status)", "event_id": "\(eventId)"]) { (json: PopularAPI) in
+            print(self.status)
         }
     }
     
@@ -147,7 +148,8 @@ extension InforPopularVC: UICollectionViewDataSource {
 }
 
 extension InforPopularVC: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InforPopularVC") as! InforPopularVC
         scr.textName           = nearArray[indexPath.row].name ?? ""
         scr.textNameVenue      = nearArray[indexPath.row].venue?.name ?? ""
@@ -159,6 +161,7 @@ extension InforPopularVC: UICollectionViewDelegate {
         scr.eventsArrayInfor = nearArray
         scr.eventId          = nearArray[indexPath.row].id
         scr.status           = nearArray[indexPath.row].status
+        scr.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         present(scr, animated: true, completion: nil)
     }
 }

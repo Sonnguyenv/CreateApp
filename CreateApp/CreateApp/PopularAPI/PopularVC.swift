@@ -12,7 +12,6 @@ class PopularVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let nib = UINib.init(nibName: "TableViewCell", bundle: nil)
         myTable.register(nib, forCellReuseIdentifier: "TableViewCell")
         
@@ -29,6 +28,7 @@ class PopularVC: UIViewController {
         } else {
             getGenericData(urlString: URLString.urlListEventsByCategory + "?pageIndex=1&pageSize=10&&category_id=\(categoryID)") { (json: PopularAPI) in
                 guard let events = json.response?.events else { return }
+                print(events[5].venue?.id)
                 DispatchQueue.main.async {
                     self.eventsArray = events
                     self.myTable.reloadData()
@@ -58,6 +58,7 @@ extension PopularVC: UITableViewDataSource {
         cell.imagView.cacheImage(urlString: urlImageArray ?? "")
         return cell
     }
+    
 }
 
 extension PopularVC: UITableViewDelegate {
@@ -72,7 +73,7 @@ extension PopularVC: UITableViewDelegate {
         scr.urlPhotoString   = urlImageArray ?? ""
         scr.eventsArrayInfor = eventsArray
         scr.eventId          = eventsArray[indexPath.row].id
-        scr.status           = eventsArray[indexPath.row].status
+        scr.venueId          = (eventsArray[indexPath.row].venue?.id)!
         present(scr, animated: true, completion: nil)
     }
 }
