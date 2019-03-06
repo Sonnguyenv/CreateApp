@@ -1500,7 +1500,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Going">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.48737050580000002" green="0.2180508075" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="goingButton:" destination="kyV-fD-wk3" eventType="touchUpInside" id="Jcy-Jr-4Zu"/>
@@ -1510,7 +1510,7 @@
                                         <rect key="frame" x="97" y="0.0" width="97" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Went">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.48737050580000002" green="0.2180508075" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="wentButton:" destination="kyV-fD-wk3" eventType="touchUpInside" id="Gsl-JT-Muh"/>
@@ -1547,19 +1547,22 @@
                                     <constraint firstAttribute="height" constant="50" id="tyA-3a-4uH"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMd-Nw-VRV">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4t-sv-kgj">
                                 <rect key="frame" x="0.0" y="70" width="414" height="666"/>
-                            </scrollView>
+                                <connections>
+                                    <segue destination="lK3-dL-AMy" kind="embed" identifier="PageController" id="gvq-2V-89U"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UMd-Nw-VRV" firstAttribute="trailing" secondItem="mWM-tj-Dqz" secondAttribute="trailing" id="3Dy-j5-oiY"/>
+                            <constraint firstItem="h4t-sv-kgj" firstAttribute="leading" secondItem="mWM-tj-Dqz" secondAttribute="leading" id="29t-0k-67a"/>
                             <constraint firstItem="FqM-XU-0MQ" firstAttribute="trailing" secondItem="mWM-tj-Dqz" secondAttribute="trailing" id="3Ju-9T-z28"/>
-                            <constraint firstItem="UMd-Nw-VRV" firstAttribute="top" secondItem="FqM-XU-0MQ" secondAttribute="bottom" id="830-ZS-5JD"/>
                             <constraint firstItem="FqM-XU-0MQ" firstAttribute="leading" secondItem="mWM-tj-Dqz" secondAttribute="leading" id="8AE-mI-y3m"/>
-                            <constraint firstItem="mWM-tj-Dqz" firstAttribute="bottom" secondItem="UMd-Nw-VRV" secondAttribute="bottom" id="dvg-aI-yMA"/>
-                            <constraint firstItem="UMd-Nw-VRV" firstAttribute="leading" secondItem="mWM-tj-Dqz" secondAttribute="leading" id="nnV-b6-sGC"/>
+                            <constraint firstItem="h4t-sv-kgj" firstAttribute="top" secondItem="FqM-XU-0MQ" secondAttribute="bottom" id="AlZ-aj-1Fq"/>
+                            <constraint firstItem="mWM-tj-Dqz" firstAttribute="bottom" secondItem="h4t-sv-kgj" secondAttribute="bottom" id="e3q-EK-k0f"/>
                             <constraint firstItem="FqM-XU-0MQ" firstAttribute="top" secondItem="mWM-tj-Dqz" secondAttribute="top" id="os6-vs-NXY"/>
+                            <constraint firstItem="mWM-tj-Dqz" firstAttribute="trailing" secondItem="h4t-sv-kgj" secondAttribute="trailing" id="qET-oD-V0T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mWM-tj-Dqz"/>
                     </view>
@@ -1567,7 +1570,6 @@
                     <navigationItem key="navigationItem" id="8mQ-Jn-WHq"/>
                     <connections>
                         <outlet property="goingButtonView" destination="vk6-sO-gcI" id="rlS-e5-b4I"/>
-                        <outlet property="scrollView" destination="UMd-Nw-VRV" id="jc8-cu-rEF"/>
                         <outlet property="wentButtonView" destination="pu4-ze-fEo" id="TtK-ae-ENC"/>
                     </connections>
                 </viewController>
@@ -1607,7 +1609,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZY-ZD-5OJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2771" y="-90"/>
+            <point key="canvasLocation" x="2858" y="-90"/>
+        </scene>
+        <!--Page Controller-->
+        <scene sceneID="dIN-JA-4H6">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="lK3-dL-AMy" customClass="PageController" customModule="CreateApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4K-Fv-mTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1471" y="-95"/>
         </scene>
         <!--WentVC-->
         <scene sceneID="jL9-aK-grO">
@@ -1641,7 +1651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPY-T0-TYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2078" y="-90"/>
+            <point key="canvasLocation" x="2148" y="-90"/>
         </scene>
         <!--Tab BarVC-->
         <scene sceneID="WfO-9l-II4">

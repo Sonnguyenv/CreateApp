@@ -38,8 +38,6 @@ class LoginVC: UIViewController {
         // MARK: POST Generic Login
         postGenericData(urlString: URLString.urlLogin, parameters: ["email": textEmail.text, "password": textPassword.text]) { (json: ResponseSample) in
             self.keyChain.set((json.response?.token)!, forKey: "token", withAccess: nil)
-            print(json.status)
-            print(self.keyChain.get("token"))
             DispatchQueue.main.async {
                 let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyEventsVC") as! MyEventsVC
                 self.navigationController?.pushViewController(scr, animated: true)

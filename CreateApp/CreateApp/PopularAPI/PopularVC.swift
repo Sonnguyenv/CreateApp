@@ -28,7 +28,6 @@ class PopularVC: UIViewController {
         } else {
             getGenericData(urlString: URLString.urlListEventsByCategory + "?pageIndex=1&pageSize=10&&category_id=\(categoryID)") { (json: PopularAPI) in
                 guard let events = json.response?.events else { return }
-                print(events[5].venue?.id)
                 DispatchQueue.main.async {
                     self.eventsArray = events
                     self.myTable.reloadData()
