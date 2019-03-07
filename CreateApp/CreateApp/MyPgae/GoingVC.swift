@@ -14,6 +14,8 @@ class GoingVC: UIViewController {
     @IBOutlet weak var myTable: UITableView!
     var eventsArray = [EventsPopular]()
     
+    weak var colorButtonDelegate: ColorButtonDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +30,10 @@ class GoingVC: UIViewController {
                 self.myTable.reloadData()
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        colorButtonDelegate?.colorButton(1)
     }
 }
 
@@ -56,11 +62,12 @@ extension GoingVC: UITableViewDelegate {
         scr.textNameVenue      = eventsArray[indexPath.row].venue?.name ?? ""
         scr.textStartDate      = eventsArray[indexPath.row].schedule_start_date ?? ""
         scr.textDescriptionRaw = eventsArray[indexPath.row].description_raw ?? ""
-        scr.eventId            = eventsArray[indexPath.row].id
         //MARK: Cache Image
         let urlImageArray    = eventsArray[indexPath.row].photo
         scr.urlPhotoString   = urlImageArray ?? ""
         scr.eventsArrayInfor = eventsArray
+        scr.eventId          = eventsArray[indexPath.row].id
+        scr.venueId          = (eventsArray[indexPath.row].venue?.id)!
         present(scr, animated: true, completion: nil)
     }
 }

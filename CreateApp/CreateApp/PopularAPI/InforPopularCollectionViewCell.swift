@@ -9,10 +9,8 @@
 import UIKit
 
 class InforPopularCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var nameVenueLable: UILabel!
     @IBOutlet weak var startTimeLable: UILabel!
     @IBOutlet weak var phtoView: UIImageView!
     @IBOutlet weak var nameDescriptionLable: UILabel!
-        
 }

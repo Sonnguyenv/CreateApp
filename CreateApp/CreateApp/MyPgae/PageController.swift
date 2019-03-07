@@ -10,18 +10,19 @@ import UIKit
 
 class PageController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    weak var delegatColor: ChangeColor?
+    let vc1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GoingVC") as! GoingVC
+    let vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WentVC") as! WentVC
     
-    lazy var viewControllerList:[UIViewController] = {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        
-        let vc1 = sb.instantiateViewController(withIdentifier: "GoingVC")
-        let vc2 = sb.instantiateViewController(withIdentifier: "WentVC")
-        return [vc1, vc2]
-    }()
+    lazy var viewControllerList = [vc1, vc2]
+    
+    weak var colorButtonDelegate: ColorButtonDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        vc1.colorButtonDelegate = self as? ColorButtonDelegate
+        vc2.colorButtonDelegate = self as? ColorButtonDelegate
+        
         self.dataSource = self
         self.delegate = self
         if let firstViewController = viewControllerList.first {
@@ -39,7 +40,6 @@ class PageController: UIPageViewController, UIPageViewControllerDataSource, UIPa
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let vcIndex = viewControllerList.index(of: viewController) else {return nil}
-        delegatColor?.colorbutton(index: vcIndex)
         let previousIndex = vcIndex - 1
         guard previousIndex >= 0 else {return nil}
         guard viewControllerList.count > previousIndex else {return nil}
@@ -48,7 +48,6 @@ class PageController: UIPageViewController, UIPageViewControllerDataSource, UIPa
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let vcIndex = viewControllerList.index(of: viewController) else {return nil}
-        delegatColor?.colorbutton(index: vcIndex)
         let nextIndex = vcIndex + 1
         guard viewControllerList.count != nextIndex else {return nil}
         guard viewControllerList.count > nextIndex else {return nil}
@@ -56,6 +55,8 @@ class PageController: UIPageViewController, UIPageViewControllerDataSource, UIPa
     }
 }
 
-protocol ChangeColor: class {
-    func colorbutton(index: Int)
+extension PageController: ColorButtonDelegate {
+    func colorButton(_ index: Int) {
+        colorButtonDelegate?.colorButton(index)
+    }
 }

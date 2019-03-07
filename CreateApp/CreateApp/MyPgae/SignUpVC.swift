@@ -7,17 +7,16 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var textPassword: UITextField!
     @IBOutlet weak var signUpView: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var lableUser: UILabel!
+    @IBOutlet weak var lableEmail: UILabel!
+    @IBOutlet weak var lablePassword: UILabel!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     let underLine : [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
         NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3176470588, green: 0.3725490196, blue: 0.3960784314, alpha: 1),
         NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue]
-    
-    var userEmtry = false
-    var emailEmtry = false
-    var passwordEmtry = false
-    var repasswordEmtry = false
-    
+
     var usertext = String()
     var passwordtext = String()
     
@@ -25,7 +24,7 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        activity.isHidden = true
         signUpView.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         signUpView.layer.borderWidth = 0
         signUpView.layer.cornerRadius = 10
@@ -37,17 +36,27 @@ class SignUpVC: UIViewController {
 
     @IBAction func signUp(_ sender: UIButton) {
         sender.shake()
-        delegate?.showData(dataUser: textEmail.text ?? "", dataPassword: textPassword.text ?? "")
+        self.activity.isHidden = false
+        self.view.alpha = 0.8
+        self.activity.startAnimating()
         postGenericData(urlString: URLString.urlRegister, parameters: ["name": textUser.text ,"email": textEmail.text, "password": textPassword.text]) { (json: ResponseSample) in
-            print(json.status)
-//        }
-//        if textPassword.text == textPassword.text {
-//            repasswordEmtry = true
-//        }
-//        if userEmtry && emailEmtry && passwordEmtry && repasswordEmtry {
-//        }
-        let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        self.navigationController?.pushViewController(scr, animated: true)
+            DispatchQueue.main.async {
+                if json.status == 1 {
+                    let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                    self.delegate?.showData(dataUser: self.textEmail.text ?? "")
+                    self.navigationController?.pushViewController(scr, animated: true)
+                    self.activity.isHidden = true
+                    self.view.alpha = 1.0
+                    self.activity.stopAnimating()
+                } else {
+                    let alert = UIAlertController(title: "Error", message: "Can not sign up, pleas try again", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    self.activity.stopAnimating()
+                    self.activity.isHidden = true
+                    self.view.alpha = 1.0
+                }
+            }
         }
     }
     
@@ -70,40 +79,32 @@ class SignUpVC: UIViewController {
         return true
     }
 
-protocol DelegateData : class {
-    func showData(dataUser: String, dataPassword: String)
-    }
-
 extension SignUpVC: UITextFieldDelegate {
-
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField {
         case textUser:
             if textUser.text!.isEmpty {
-                textUser.text = "incorrect"
-                userEmtry = false
+                lableUser.text = "😫😫😫😫😫"
             } else {
-//                lableUser.text = String()
-                userEmtry = true
+                lableUser.text = "😀😀😀😀😀"
             }
         case textEmail:
             if textEmail.text!.contains("@") {
-//                lableEmail.text = String()
-                emailEmtry = true
+                lableEmail.text = "😀😀😀😀😀"
             } else {
-                textEmail.text = "incorrect"
-                emailEmtry = false
+                lableEmail.text = "😫😫😫😫😫"
             }
         case textPassword:
             if checkPasswordValidation(textPassword.text!) {
-                textPassword.text = "incorrect"
-                passwordEmtry = false
+                lablePassword.text = "😫😫😫😫😫"
             } else {
-//                lablePass.text = String()
-                passwordEmtry = true
+                lablePassword.text = "😀😀😀😀😀"
             }
         default: break
         }
     }
 }
 
+protocol DelegateData : class {
+    func showData(dataUser: String)
+}

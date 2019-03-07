@@ -57,7 +57,6 @@ extension PopularVC: UITableViewDataSource {
         cell.imagView.cacheImage(urlString: urlImageArray ?? "")
         return cell
     }
-    
 }
 
 extension PopularVC: UITableViewDelegate {

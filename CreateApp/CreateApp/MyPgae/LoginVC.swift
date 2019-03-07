@@ -8,8 +8,8 @@ class LoginVC: UIViewController {
     @IBOutlet weak var textEmail: UITextField!
     @IBOutlet weak var textPassword: UITextField!
     @IBOutlet weak var loginView: UIButton!
-//    @IBOutlet weak var accountView: UIView!
     @IBOutlet weak var forgotButton: UIButton!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     let underLine : [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
@@ -20,6 +20,7 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activity.isHidden = true
         let attributeString = NSMutableAttributedString(string: "Forgot password?",
                                                         attributes: underLine)
         forgotButton.setAttributedTitle(attributeString, for: .normal)
@@ -27,20 +28,29 @@ class LoginVC: UIViewController {
         loginView.layer.borderColor  = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         loginView.layer.borderWidth  = 0
         loginView.layer.cornerRadius = 10
-//        textEmail.text = "dreamsonss@gmail.com"
-//        textPassword.text = "NmpXvfq1"
-        textEmail.text = "zxcb@gmail.com"
-        textPassword.text = "Daucoma1995"
+        textEmail.text = "dreamsonss@gmail.com"
+        textPassword.text = "NmpXvfq1"
+//        textEmail.text = "zxcb@gmail.com"
+//        textPassword.text = "Daucoma1995"
     }
     
     @IBAction func login(_ sender: UIButton) {
         sender.pulsate()
         // MARK: POST Generic Login
+        self.activity.isHidden = false
+        self.view.alpha = 0.8
+        self.activity.startAnimating()
         postGenericData(urlString: URLString.urlLogin, parameters: ["email": textEmail.text, "password": textPassword.text]) { (json: ResponseSample) in
             self.keyChain.set((json.response?.token)!, forKey: "token", withAccess: nil)
+            if json.status == 1 {
             DispatchQueue.main.async {
                 let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyEventsVC") as! MyEventsVC
                 self.navigationController?.pushViewController(scr, animated: true)
+                self.activity.isHidden = true
+                self.view.alpha = 1.0
+                self.activity.stopAnimating()
+                TabBarVC.instance.undateTabBar()
+                }
             }
         }
     }
@@ -56,8 +66,8 @@ class LoginVC: UIViewController {
 }
 
 extension LoginVC: DelegateData {
-    func showData(dataUser: String, dataPassword: String) {
+    func showData(dataUser: String) {
         textEmail.text = dataUser
-        textPassword.text = dataPassword
     }
 }
+

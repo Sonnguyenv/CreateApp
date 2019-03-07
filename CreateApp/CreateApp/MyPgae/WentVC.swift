@@ -16,6 +16,8 @@ class WentVC: UIViewController {
     
     var eventsArray = [EventsPopular]()
     
+    weak var colorButtonDelegate: ColorButtonDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,12 +27,15 @@ class WentVC: UIViewController {
         guard let token = keyChain.get("token") else {return}
         getGenericData(urlString: URLString.urlListMyEvents + "?status=2&token=\(token)") { (json: PopularAPI) in
             guard let events = json.response?.events else {return}
-            print(events)
             DispatchQueue.main.async {
                 self.eventsArray = events
                 self.myTable.reloadData()
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        colorButtonDelegate?.colorButton(2)
     }
 }
 
@@ -54,16 +59,17 @@ extension WentVC: UITableViewDataSource {
 
 extension WentVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let screen = storyboard.instantiateViewController(withIdentifier: "InforPopularVC") as! InforPopularVC
-        screen.textName           = eventsArray[indexPath.row].name ?? ""
-        screen.textNameVenue      = eventsArray[indexPath.row].venue?.name ?? ""
-        screen.textStartDate      = eventsArray[indexPath.row].schedule_start_date ?? ""
-        screen.textDescriptionRaw = eventsArray[indexPath.row].description_raw ?? ""
+        let scr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InforPopularVC") as! InforPopularVC
+        scr.textName           = eventsArray[indexPath.row].name ?? ""
+        scr.textNameVenue      = eventsArray[indexPath.row].venue?.name ?? ""
+        scr.textStartDate      = eventsArray[indexPath.row].schedule_start_date ?? ""
+        scr.textDescriptionRaw = eventsArray[indexPath.row].description_raw ?? ""
         //MARK: Cache Image
-        let urlImageArray = eventsArray[indexPath.row].photo
-        screen.urlPhotoString   = urlImageArray ?? ""
-        screen.eventsArrayInfor = eventsArray
-        present(screen, animated: true, completion: nil)
+        let urlImageArray    = eventsArray[indexPath.row].photo
+        scr.urlPhotoString   = urlImageArray ?? ""
+        scr.eventsArrayInfor = eventsArray
+        scr.eventId          = eventsArray[indexPath.row].id
+        scr.venueId          = (eventsArray[indexPath.row].venue?.id)!
+        present(scr, animated: true, completion: nil)
     }
 }

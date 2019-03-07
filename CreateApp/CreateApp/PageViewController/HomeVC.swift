@@ -5,6 +5,8 @@ class HomeVC: UIViewController {
  
     @IBOutlet weak var newsView: UIView!
     @IBOutlet weak var popularView: UIView!
+    @IBOutlet weak var newsButtonView: UIButton!
+    @IBOutlet weak var popularButtonView: UIButton!
     var page: PageViewController?
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -17,31 +19,38 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsView.backgroundColor    = #colorLiteral(red: 0.4873705058, green: 0.2180508075, blue: 0.6901960784, alpha: 1)
-        popularView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
     }
     
     @IBAction func newsButton(_ sender: Any) {
         page?.moveToPage(0)
         newsView.backgroundColor    = #colorLiteral(red: 0.4873705058, green: 0.2180508075, blue: 0.6901960784, alpha: 1)
+        newsButtonView.setTitleColor(#colorLiteral(red: 0.4873705058, green: 0.2180508075, blue: 0.6901960784, alpha: 1), for: .normal)
         popularView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        popularButtonView.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
     }
     
     @IBAction func popularButton(_ sender: Any) {
         page?.moveToPage(1)
         popularView.backgroundColor = #colorLiteral(red: 0.4873705058, green: 0.2180508075, blue: 0.6901960784, alpha: 1)
+        popularButtonView.setTitleColor(#colorLiteral(red: 0.4873705058, green: 0.2180508075, blue: 0.6901960784, alpha: 1), for: .normal)
         newsView.backgroundColor    = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        newsButtonView.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
     }
 }
 
 extension HomeVC: DelegateColor {
     func colorbutton(index: Int) {
         if index == 0 {
-            newsView.backgroundColor = #colorLiteral(red: 0.4873705058, green: 0.2180508075, blue: 0.6901960784, alpha: 1)
+            newsView.backgroundColor    = #colorLiteral(red: 0.4873705058, green: 0.2180508075, blue: 0.6901960784, alpha: 1)
+            newsButtonView.setTitleColor(#colorLiteral(red: 0.4873705058, green: 0.2180508075, blue: 0.6901960784, alpha: 1), for: .normal)
             popularView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            popularButtonView.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
         } else {
-            newsView.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 1, alpha: 1)
             popularView.backgroundColor = #colorLiteral(red: 0.4873705058, green: 0.2180508075, blue: 0.6901960784, alpha: 1)
+            popularButtonView.setTitleColor(#colorLiteral(red: 0.4873705058, green: 0.2180508075, blue: 0.6901960784, alpha: 1), for: .normal)
+            newsView.backgroundColor    = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            newsButtonView.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
         }
     }
 }
